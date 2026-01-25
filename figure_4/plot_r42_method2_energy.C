@@ -1,5 +1,5 @@
-#include "r42_data_points.h"
-#include "color_definition.h"
+#include "../data_points/R42_central_energy_dependence.h"
+#include "../data_points/color_definition.h"
 
 void plot_r42_method2_energy(){
 
@@ -31,15 +31,17 @@ void plot_r42_method2_energy(){
 
   //urqmd, method 2
   TGraphErrors* tg6 = new TGraphErrors(6, FXT_Method2_R42_UrQMD_x, FXT_Method2_R42_UrQMD, FXT_Method2_R42_UrQMD_ex, FXT_Method2_R42_UrQMD_stat);
-  TGraphErrors* tg6_prof = new TGraphErrors(6, FXT_Method2_R42_UrQMD_x, FXT_Method2_R42_UrQMD, FXT_Method2_R42_UrQMD_ex, FXT_Method2_R42_UrQMD_stat);
-  tg6->SetMarkerStyle(28);
-  tg6->SetMarkerSize(1.8);
-  tg6->SetMarkerColor(4);
-  tg6->SetLineColor(4);
-  tg6_prof->SetMarkerStyle(28);
-  tg6_prof->SetMarkerSize(1.6);
-  tg6_prof->SetMarkerColor(4);
-  tg6_prof->SetLineColor(4);
+  tg6->SetFillColorAlpha(4, 0.6);
+  tg6->SetLineColorAlpha(4, 0.6);
+  //TGraphErrors* tg6_prof = new TGraphErrors(6, FXT_Method2_R42_UrQMD_x, FXT_Method2_R42_UrQMD, FXT_Method2_R42_UrQMD_ex, FXT_Method2_R42_UrQMD_stat);
+  //tg6->SetMarkerStyle(28);
+  //tg6->SetMarkerSize(1.8);
+  //tg6->SetMarkerColor(4);
+  //tg6->SetLineColor(4);
+  //tg6_prof->SetMarkerStyle(28);
+  //tg6_prof->SetMarkerSize(1.6);
+  //tg6_prof->SetMarkerColor(4);
+  //tg6_prof->SetLineColor(4);
 
  
   //data C4/C2, CBWC, 0-5%, Collider
@@ -124,6 +126,8 @@ void plot_r42_method2_energy(){
   l1.Draw();
   l2.Draw();
   bg1.Draw();
+  tg6->Draw("3");
+  //tg6_prof->Draw("p");
   tgucoll->Draw("3");
   tgcoll_sys->Draw("Zp");
   tgcoll_prof->Draw("p");
@@ -132,10 +136,6 @@ void plot_r42_method2_energy(){
   tg5->Draw("p");
   tg5_sys->Draw("zp");
   tg5_prof->Draw("p");
-
-  tg6->Draw("p");
-  tg6_prof->Draw("p");
-
 
   p1->cd();
   //data markers
@@ -178,20 +178,19 @@ void plot_r42_method2_energy(){
   TMarker *tm66 = new TMarker(40.5,-0.480,28);
   tm66->SetMarkerColorAlpha(4, 1.00);
   tm66->SetMarkerSize(1.8);
-  tm66->Draw();
+  //tm66->Draw();
   TMarker *tm666 = new TMarker(40.5,-0.480,28);
   tm666->SetMarkerColorAlpha(4, 1.00);
   tm666->SetMarkerSize(1.6);
-  tm666->Draw();
+  //tm666->Draw();
 
   //UrQMD bands
   TBox *b1 = new TBox(34,-0.68,47,-0.83);
   b1->SetFillColorAlpha(cidx4, 0.6);
   b1->Draw();
-  TBox *b2 = new TBox(34,-0.90,47,-1.05);
-  b2->SetFillColorAlpha(cidx2, 1.0);
-  b2->SetFillStyle(3244);
-  //b2->Draw();
+  TBox *b2 = new TBox(34,-0.40,47,-0.55);
+  b2->SetFillColorAlpha(4, 0.6);
+  b2->Draw();
 
   TLatex ll;
   ll.SetTextFont(42);

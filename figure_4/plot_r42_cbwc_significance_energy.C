@@ -1,5 +1,5 @@
-#include "r42_data_points.h"
-#include "color_definition.h"
+#include "../data_points/R42_central_energy_dependence.h"
+#include "../data_points/color_definition.h"
 
 void plot_r42_cbwc_significance_energy(){
 
