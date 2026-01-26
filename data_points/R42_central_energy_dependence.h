@@ -46,7 +46,7 @@ double FXT_Method2_R42_UrQMD_stat[6]={0.0856, 0.0662, 0.0607, 0.0645, 0.0840,0.0
  
 //0-5%, cbwc method, urqmd at collider energies
 double Coll_CBWC_R42_UrQMD_x   [9]={   7.7,     9.2,    11.5,    14.6,    17.3,    19.6,      27,     39,   54.4};
-double Coll_CBWC_R42_UrQMD_muB [9]={   420,     372,    316,      262,     230,     206,     156,     112,    85};
+double Coll_CBWC_R42_UrQMD_muB [9]={   420,     372,    316,      262,     230,     206,     156,    112,     85};
 double Coll_CBWC_R42_UrQMD_ex  [9]={     0,       0,       0,       0,       0,       0,       0,      0,      0};
 double Coll_CBWC_R42_UrQMD     [9]={0.4755,  0.4628,  0.5257,  0.5962,  0.6787,  0.7332,  0.8714, 0.8600, 0.8397};
 double Coll_CBWC_R42_UrQMD_stat[9]={0.0644,  0.0628,  0.0677,  0.0708,  0.0529,  0.0581,  0.0517, 0.0457, 0.0557};

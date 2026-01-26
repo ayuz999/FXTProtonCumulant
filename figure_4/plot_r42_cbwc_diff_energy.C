@@ -207,8 +207,6 @@ void plot_r42_cbwc_diff_energy(){
   lax.DrawLatex(0.036,0.350,"[C_{4}/C_{2}]^{Data}-[C_{4}/C_{2}]^{UrQMD}");
   lax.SetTextAngle(0);
   lax.SetTextSize(0.04);
-  //TBox *wb2 = new TBox(0.188,0.4, 0.460, 0.46);
-  //wb2->SetFillColor(0);
 
   cas->Print("Fig_R42_CBWC_diff_energy.pdf");
 }
