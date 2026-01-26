@@ -1,6 +1,4 @@
 
-
-
 //C4/C2 of experimental data points at FXT energies
 //0-5%, cbwc method, FXT data
 double FXT_CBWC_R42_x   [6]={    3.0,     3.2,    3.5,    3.9,    4.5,   5.2};//x axis
