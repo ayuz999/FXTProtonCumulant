@@ -1,8 +1,14 @@
 #include "../data_points/R42_central_energy_dependence.h"
-#include "../data_points/color_definition.h"
+#include "../data_points/FXT_CBWC_energy_dependence_all.h"
+#include "../data_points/Collider_CBWC_energy_dependence.h"
+
+#include "../data_points/UrQMD_FXT_CBWC_energy_dependence_all.h"
+#include "../data_points/UrQMD_Collider_CBWC_energy_dependence_all.h"
+
+#include "color_definition.h"
+
 
 void plot_r42_cbwc_energy(){
-
   //initialize user defined colors
   Int_t cidx1 = TColor::GetFreeColorIndex();
   Int_t cidx2 = cidx1 + 1; 
@@ -18,24 +24,29 @@ void plot_r42_cbwc_energy(){
   TColor* cl6 = new TColor(cidx6, float_cl6[0]/255., float_cl6[1]/255., float_cl6[2]/255.);
 
   //data C4/C2, CBWC, 0-5%, FXT
-  TGraphErrors* tg1      = new TGraphErrors(5, FXT_CBWC_R42_x, FXT_CBWC_R42, FXT_CBWC_R42_ex, FXT_CBWC_R42_stat);
+  TGraphErrors* tg1      = new TGraphErrors(5, FXT_CBWC_Energy, FXT_CBWC_R42_Cent05, FXT_CBWC_XError, FXT_CBWC_R42_Cent05_stat);
   tg1->SetMarkerStyle(21);
   tg1->SetMarkerColorAlpha(cidx3, 1.0);
   tg1->SetLineColorAlpha(1,1.0);
   tg1->SetLineWidth(2);
-  TGraphErrors* tg1_sys  = new TGraphErrors(5, FXT_CBWC_R42_x, FXT_CBWC_R42, FXT_CBWC_R42_ex, FXT_CBWC_R42_sys);
+  TGraphErrors* tg1_sys  = new TGraphErrors(5, FXT_CBWC_Energy, FXT_CBWC_R42_Cent05, FXT_CBWC_XError, FXT_CBWC_R42_Cent05_sys);
   tg1_sys->SetLineColorAlpha(cidx3, 0.90);
   tg1_sys->SetLineWidth(13);
   tg1_sys->SetMarkerSize(1.6);
   tg1_sys->SetMarkerStyle(25);
-  TGraphErrors* tg1_prof = new TGraphErrors(5, FXT_CBWC_R42_x, FXT_CBWC_R42, FXT_CBWC_R42_ex, FXT_CBWC_R42_ex);
+  TGraphErrors* tg1_prof = new TGraphErrors(5, FXT_CBWC_Energy, FXT_CBWC_R42_Cent05, FXT_CBWC_XError, FXT_CBWC_XError);
   tg1_prof->SetMarkerColorAlpha(1, 1.0);
   tg1_prof->SetMarkerStyle(25);
   tg1_prof->SetMarkerSize(1.8);
   tg1_prof->SetLineWidth(2);
 
   //UrQMD C4/C2, CBWC, 0-5%, FXT, scaling RefMult3 to data
-  TGraphErrors* tgu = new TGraphErrors(6, FXT_CBWC_R42_UrQMD_x, FXT_CBWC_R42_UrQMD, FXT_CBWC_R42_UrQMD_ex, FXT_CBWC_R42_UrQMD_tot);
+  double UrQMD_FXT_CBWC_GapON_HY5_R42_Cent05_tot[6];
+  for(int i=0;i<6;i++){
+    UrQMD_FXT_CBWC_GapON_HY5_R42_Cent05_tot[i] = sqrt(
+        pow(UrQMD_FXT_CBWC_GapON_HY5_R42_Cent05_stat[i], 2) + pow(UrQMD_FXT_CBWC_GapON_HY5_R42_Cent05_sys[i], 2) );
+  }
+  TGraphErrors* tgu = new TGraphErrors(6, UrQMD_FXT_CBWC_Energy, UrQMD_FXT_CBWC_GapON_HY5_R42_Cent05, UrQMD_FXT_CBWC_XError, UrQMD_FXT_CBWC_GapON_HY5_R42_Cent05_tot);
   tgu->SetMarkerStyle(20);
   tgu->SetMarkerColorAlpha(cidx2,1.0);
   tgu->SetFillColorAlpha  (cidx2,1.0);
@@ -44,25 +55,29 @@ void plot_r42_cbwc_energy(){
 
   
   //data C4/C2, CBWC, 0-5%, Collider
-  TGraphErrors* tgcoll = new TGraphErrors(9, Coll_CBWC_R42_x, Coll_CBWC_R42, Coll_CBWC_R42_ex, Coll_CBWC_R42_stat);
+
+  double dummy_ex[9]={0,0,0,0,0,0,0,0,0};
+
+  TGraphErrors* tgcoll = new TGraphErrors(9, cEnergies, cObservables[2][0], dummy_ex, cObservables_sts[2][0]);
   tgcoll->SetMarkerStyle(21);
   tgcoll->SetFillColorAlpha(1, 1.);
   tgcoll->SetLineColorAlpha(1, 1.);
   tgcoll->SetLineWidth(2);
   tgcoll->SetMarkerColorAlpha(2, 1.0);
   tgcoll->SetMarkerSize(1.0);
-  TGraphErrors* tgcoll_sys = new TGraphErrors(9, Coll_CBWC_R42_x, Coll_CBWC_R42, Coll_CBWC_R42_ex, Coll_CBWC_R42_sys);
+  TGraphErrors* tgcoll_sys = new TGraphErrors(9, cEnergies, cObservables[2][0], dummy_ex, cObservables_sys[2][0]);
   tgcoll_sys->SetFillColorAlpha(2, 1.0);
   tgcoll_sys->SetLineColorAlpha(2, 1.0);
   tgcoll_sys->SetLineWidth(12);
   tgcoll_sys->SetMarkerStyle(25);
   tgcoll_sys->SetMarkerSize(1.6);
-  TGraphErrors* tgcoll_prof = new TGraphErrors(9, Coll_CBWC_R42_x, Coll_CBWC_R42, Coll_CBWC_R42_ex, Coll_CBWC_R42_ex);
+  TGraphErrors* tgcoll_prof = new TGraphErrors(9, cEnergies, cObservables[2][0], dummy_ex, dummy_ex);
   tgcoll_prof->SetMarkerColorAlpha(1, 1.0);
   tgcoll_prof->SetMarkerStyle(25);
   tgcoll_prof->SetMarkerSize(1.8);
   
   //UrQMD results at collider energies
+  //TGraphErrors* tgucoll = new TGraphErrors(9, UrQMD_Collider_CBWC_Energy, UrQMD_Collider_CBWC_Netp_R42_Cent05, UrQMD_Collider_CBWC_XError, UrQMD_Collider_CBWC_Netp_R42_Cent05_stat);
   TGraphErrors* tgucoll = new TGraphErrors(9, Coll_CBWC_R42_UrQMD_x, Coll_CBWC_R42_UrQMD, Coll_CBWC_R42_UrQMD_ex, Coll_CBWC_R42_UrQMD_stat);
   tgucoll->SetFillColorAlpha(cidx4, 0.6);
   tgucoll->SetLineColorAlpha(cidx4, 0.6);

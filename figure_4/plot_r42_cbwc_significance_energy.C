@@ -1,5 +1,12 @@
 #include "../data_points/R42_central_energy_dependence.h"
-#include "../data_points/color_definition.h"
+#include "../data_points/FXT_CBWC_energy_dependence_all.h"
+#include "../data_points/Collider_CBWC_energy_dependence.h"
+
+#include "../data_points/UrQMD_FXT_CBWC_energy_dependence_all.h"
+#include "../data_points/UrQMD_Collider_CBWC_energy_dependence_all.h"
+
+#include "color_definition.h"
+
 
 void plot_r42_cbwc_significance_energy(){
 
@@ -20,17 +27,24 @@ void plot_r42_cbwc_significance_energy(){
   //calculate significance of deviation
   double FXT_diff[6];//absolute difference
   double FXT_signif[6];//significance of deviation
+  
+  double UrQMD_FXT_CBWC_GapON_HY5_R42_Cent05_tot[6];
+  for(int i=0;i<6;i++){
+    UrQMD_FXT_CBWC_GapON_HY5_R42_Cent05_tot[i] = sqrt(
+        pow(UrQMD_FXT_CBWC_GapON_HY5_R42_Cent05_stat[i], 2) + pow(UrQMD_FXT_CBWC_GapON_HY5_R42_Cent05_sys[i], 2) );
+  }
+
   for(int iPoint=0; iPoint<6; ++iPoint){
-    FXT_diff[iPoint] = FXT_CBWC_R42[iPoint] - FXT_CBWC_R42_UrQMD[iPoint];
+    FXT_diff[iPoint] = FXT_CBWC_R42_Cent05[iPoint] - UrQMD_FXT_CBWC_GapON_HY5_R42_Cent05[iPoint];
     FXT_signif[iPoint] = FXT_diff[iPoint] / sqrt(
-        pow(FXT_CBWC_R42_stat[iPoint], 2.) + 
-        pow(FXT_CBWC_R42_sys[iPoint], 2.) + 
-        pow(FXT_CBWC_R42_UrQMD_tot[iPoint], 2.) );
+        pow(FXT_CBWC_R42_Cent05_stat[iPoint], 2.) + 
+        pow(FXT_CBWC_R42_Cent05_sys[iPoint], 2.) + 
+        pow(UrQMD_FXT_CBWC_GapON_HY5_R42_Cent05_tot[iPoint], 2.) );
   }
   //use 5 to exclude 5.2 GeV
-  TGraphErrors* tg2 = new TGraphErrors(5, FXT_CBWC_R42_x, FXT_signif, FXT_CBWC_R42_ex, FXT_CBWC_R42_ex); 
-  TGraphErrors* tg3 = new TGraphErrors(5, FXT_CBWC_R42_x, FXT_signif, FXT_CBWC_R42_ex, FXT_CBWC_R42_ex);
-  TGraphErrors* tg4 = new TGraphErrors(5, FXT_CBWC_R42_x, FXT_signif, FXT_CBWC_R42_ex, FXT_CBWC_R42_ex);
+  TGraphErrors* tg2 = new TGraphErrors(5, FXT_CBWC_Energy, FXT_signif, FXT_CBWC_XError, FXT_CBWC_XError); 
+  TGraphErrors* tg3 = new TGraphErrors(5, FXT_CBWC_Energy, FXT_signif, FXT_CBWC_XError, FXT_CBWC_XError);
+  TGraphErrors* tg4 = new TGraphErrors(5, FXT_CBWC_Energy, FXT_signif, FXT_CBWC_XError, FXT_CBWC_XError);
   tg2->SetMarkerStyle(25);
   tg3->SetMarkerStyle(21);
   tg4->SetMarkerStyle(25);

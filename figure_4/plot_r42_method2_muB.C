@@ -1,5 +1,5 @@
 #include "../data_points/R42_central_energy_dependence.h"
-#include "../data_points/color_definition.h"
+#include "color_definition.h"
 
 void plot_r42_method2_muB(){
 
@@ -207,7 +207,7 @@ void plot_r42_method2_muB(){
   //draw text
   cas->cd();
   lax.SetTextFont(42);
-  lax.DrawLatex(0.530,0.040, "#mu_{B}  (MeV)");
+  lax.DrawLatex(0.300,0.040, "Baryon Chemical Potential #mu_{B}  (MeV)");
   lax.SetTextAngle(90);
   lax.SetTextSize(0.055);
   lax.DrawLatex(0.066,0.470,"C_{4}/C_{2}");

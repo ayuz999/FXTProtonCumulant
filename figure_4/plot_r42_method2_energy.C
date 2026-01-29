@@ -1,5 +1,5 @@
 #include "../data_points/R42_central_energy_dependence.h"
-#include "../data_points/color_definition.h"
+#include "color_definition.h"
 
 void plot_r42_method2_energy(){
 

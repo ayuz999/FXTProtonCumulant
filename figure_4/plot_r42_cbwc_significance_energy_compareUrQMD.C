@@ -1,9 +1,16 @@
 #include "../data_points/R42_central_energy_dependence.h"
+#include "../data_points/FXT_CBWC_energy_dependence_all.h"
+#include "../data_points/Collider_CBWC_energy_dependence.h"
+
+#include "../data_points/UrQMD_FXT_CBWC_energy_dependence_all.h"
+#include "../data_points/UrQMD_Collider_CBWC_energy_dependence_all.h"
+
 #include "color_definition.h"
 
-void plot_r42_method2_significance_energy(){
 
-  //customized colors
+void plot_r42_cbwc_significance_energy_compareUrQMD(){
+
+  //initialize user defined colors
   Int_t cidx1 = TColor::GetFreeColorIndex();
   Int_t cidx2 = cidx1 + 1;
   Int_t cidx3 = cidx1 + 2;
@@ -17,30 +24,65 @@ void plot_r42_method2_significance_energy(){
   TColor* cl5 = new TColor(cidx5, float_cl5[0]/255., float_cl5[1]/255., float_cl5[2]/255.);
   TColor* cl6 = new TColor(cidx6, float_cl6[0]/255., float_cl6[1]/255., float_cl6[2]/255.);
 
-
   //calculate significance of deviation
-  double FXT_diff[6];
-  double FXT_signif[6];
-  for(int ipoint=0; ipoint<6;++ipoint){
-    FXT_diff[ipoint] = FXT_Method2_R42[ipoint]-FXT_Method2_R42_UrQMD[ipoint];
-    FXT_signif[ipoint] = FXT_diff[ipoint] / sqrt(pow(FXT_Method2_R42_stat[ipoint], 2.) + pow(FXT_Method2_R42_sys[ipoint] , 2.) + pow(FXT_Method2_R42_UrQMD_stat[ipoint], 2.));
+  double FXT_diff[6];//absolute difference
+  double FXT_signif[6];//significance of deviation
+  double FXT_diff2[6];//absolute difference
+  double FXT_signif2[6];//significance of deviation
+  
+  double UrQMD_FXT_CBWC_GapON_HY5_R42_Cent05_tot[6];
+  for(int i=0;i<6;i++){
+    UrQMD_FXT_CBWC_GapON_HY5_R42_Cent05_tot[i] = sqrt(
+        pow(UrQMD_FXT_CBWC_GapON_HY5_R42_Cent05_stat[i], 2) + pow(UrQMD_FXT_CBWC_GapON_HY5_R42_Cent05_sys[i], 2) );
   }
-  TGraphErrors* tg71 = new TGraphErrors(6, FXT_Method2_R42_x, FXT_signif, FXT_Method2_R42_ex, FXT_Method2_R42_ex);
-  TGraphErrors* tg72 = new TGraphErrors(6, FXT_Method2_R42_x, FXT_signif, FXT_Method2_R42_ex, FXT_Method2_R42_ex);
-  TGraphErrors* tg73 = new TGraphErrors(6, FXT_Method2_R42_x, FXT_signif, FXT_Method2_R42_ex, FXT_Method2_R42_ex);
-  tg71->SetMarkerStyle(20);
-  tg72->SetMarkerStyle(24);
-  tg73->SetMarkerStyle(24);
-  tg72->SetMarkerSize(1.6); 
-  tg73->SetMarkerSize(1.8); 
-  tg73->SetLineStyle(2);
-  tg73->SetLineWidth(2);
+
+  double UrQMD_FXT_CBWC_GapOFF_HY5_R42_Cent05_tot[6];
+  for(int i=0;i<6;i++){
+    UrQMD_FXT_CBWC_GapOFF_HY5_R42_Cent05_tot[i] = sqrt(
+        pow(UrQMD_FXT_CBWC_GapOFF_HY5_R42_Cent05_stat[i], 2) + pow(UrQMD_FXT_CBWC_GapOFF_HY5_R42_Cent05_sys[i], 2) );
+  }
+
+  for(int iPoint=0; iPoint<6; ++iPoint){
+    FXT_diff[iPoint] = FXT_CBWC_R42_Cent05[iPoint] - UrQMD_FXT_CBWC_GapON_HY5_R42_Cent05[iPoint];
+    FXT_signif[iPoint] = FXT_diff[iPoint] / sqrt(
+        pow(FXT_CBWC_R42_Cent05_stat[iPoint], 2.) + 
+        pow(FXT_CBWC_R42_Cent05_sys[iPoint], 2.) + 
+        pow(UrQMD_FXT_CBWC_GapON_HY5_R42_Cent05_tot[iPoint], 2.) );
+    FXT_diff2[iPoint] = FXT_CBWC_R42_Cent05[iPoint] - UrQMD_FXT_CBWC_GapOFF_HY5_R42_Cent05[iPoint];
+    FXT_signif2[iPoint] = FXT_diff[iPoint] / sqrt(
+        pow(FXT_CBWC_R42_Cent05_stat[iPoint], 2.) + 
+        pow(FXT_CBWC_R42_Cent05_sys[iPoint], 2.) + 
+        pow(UrQMD_FXT_CBWC_GapOFF_HY5_R42_Cent05_tot[iPoint], 2.) );
+  }
+  //use 5 to exclude 5.2 GeV
+  TGraphErrors* tg2 = new TGraphErrors(5, FXT_CBWC_Energy, FXT_signif, FXT_CBWC_XError, FXT_CBWC_XError); 
+  TGraphErrors* tg21 = new TGraphErrors(5, FXT_CBWC_Energy, FXT_signif2, FXT_CBWC_XError, FXT_CBWC_XError); 
+  TGraphErrors* tg3 = new TGraphErrors(5, FXT_CBWC_Energy, FXT_signif, FXT_CBWC_XError, FXT_CBWC_XError);
+  TGraphErrors* tg4 = new TGraphErrors(5, FXT_CBWC_Energy, FXT_signif, FXT_CBWC_XError, FXT_CBWC_XError);
+  tg2->SetMarkerStyle(25);
+  tg21->SetMarkerStyle(25);
+  tg3->SetMarkerStyle(21);
+  tg4->SetMarkerStyle(25);
+  tg3->SetMarkerSize(1.0);
+  tg2->SetMarkerSize(1.6);
+  tg4->SetMarkerSize(1.8);
+  tg3->SetLineStyle(2);
+  tg3->SetLineColorAlpha(cidx3, 1.0);
+  tg3->SetLineWidth(2);
+  tg2->SetMarkerColor(1);
+  tg21->SetMarkerColor(4);
+  tg3->SetMarkerColorAlpha(cidx3, 1.0);
+  tg4->SetMarkerColor(1);
+
 
   double Coll_diff[9];
   double Coll_signif[9];
   for(int i=0;i<9;++i){
     Coll_diff[i] = Coll_CBWC_R42[i] - Coll_CBWC_R42_UrQMD[i];
-    Coll_signif[i] = Coll_diff[i]/sqrt(pow(Coll_CBWC_R42_stat[i], 2.)+ pow(Coll_CBWC_R42_sys[i] ,2.) + pow(Coll_CBWC_R42_UrQMD_stat[i], 2.));
+    Coll_signif[i] = Coll_diff[i] /sqrt(
+        pow(Coll_CBWC_R42_stat[i], 2) +
+        pow(Coll_CBWC_R42_sys[i], 2)  +
+        pow(Coll_CBWC_R42_UrQMD_stat[i], 2) );
   }
   TGraphErrors* tcoll2 = new TGraphErrors(9, Coll_CBWC_R42_x, Coll_signif, Coll_CBWC_R42_ex, Coll_CBWC_R42_ex);
   TGraphErrors* tcoll3 = new TGraphErrors(9, Coll_CBWC_R42_x, Coll_signif, Coll_CBWC_R42_ex, Coll_CBWC_R42_ex);
@@ -56,8 +98,8 @@ void plot_r42_method2_significance_energy(){
   tcoll2->SetMarkerSize(1.6);
   tcoll4->SetMarkerSize(1.8);
 
-
-  //---------------------------------------------
+  
+  //---------------------------------------
   //start to plot
   double xl1 = 2.5;
   double xl2 = 63;
@@ -106,6 +148,7 @@ void plot_r42_method2_significance_energy(){
   l5.SetLineWidth(2);
 
 
+
   TLatex lax;
   lax.SetNDC();
   lax.SetTextFont(62);
@@ -140,18 +183,18 @@ void plot_r42_method2_significance_energy(){
   h1->GetYaxis()->SetNdivisions(505);
   h1->GetXaxis()->SetNdivisions(505);
   h1->GetYaxis()->SetLabelOffset(0.014);
-
   h1->GetXaxis()->ChangeLabel(2, -1, -1, -1, -1, -1, " ");
   h1->GetXaxis()->ChangeLabel(4, -1, -1, -1, -1, -1, " ");
   h1->GetXaxis()->ChangeLabel(6, -1, -1, -1, -1, -1, " ");
   h1->GetXaxis()->ChangeLabel(7, -1, -1, -1, -1, -1, " ");
   h1->GetXaxis()->ChangeLabel(11, -1, -1, -1, -1, -1, " ");
   h1->GetXaxis()->ChangeLabel(13, -1, -1, -1, -1, -1, " ");
-
-
   l1.Draw();
   l2.Draw();
+
+
   l3.Draw();
+  //l31.Draw();
   l32.Draw();
   l33.Draw();
   l34.Draw();
@@ -163,25 +206,20 @@ void plot_r42_method2_significance_energy(){
   l5.Draw();
 
 
-  tg71->Draw("P");
-  tg72->Draw("P");
-  tg73->Draw("LP");
+  tg3->Draw("LP");
+  tg2->Draw("P");
+  tg21->Draw("P");
+  tg2->Print();
+  tg21->Print();
+  tg4->Draw("P");
   tcoll3->Draw("LP");
   tcoll2->Draw("P");
   tcoll4->Draw("P");
 
-  //UrQMD bands
-  TBox *b1 = new TBox(34,-0.68,47,-0.83);
-  b1->SetFillColorAlpha(cidx4, 0.6);
-  //b1->Draw();
-  TBox *b2 = new TBox(34,-0.90,47,-1.05);
-  b2->SetFillColorAlpha(cidx2, 1.0);
-  b2->SetFillStyle(3244);
-  //b2->Draw();
-
   TLatex ll;
   ll.SetTextFont(42);
   ll.SetNDC();
+  ll.SetTextSize(0.06);
   ll.SetTextSize(0.045);
   ll.SetTextSize(0.06);
 
@@ -192,8 +230,6 @@ void plot_r42_method2_significance_energy(){
   lax.SetTextAngle(90);
   lax.SetTextSize(0.055);
   lax.DrawLatex(0.055,0.450,"Significance");
-
-
   lax.SetTextAngle(0);
   lax.SetTextSize(0.04);
   TBox *wb2 = new TBox(0.188,0.4, 0.460, 0.46);
@@ -201,6 +237,5 @@ void plot_r42_method2_significance_energy(){
   //wb2->Draw();
   lax.DrawLatex(0.20,0.400,"#frac{#frac{C_{4}}{C_{2}}^{Data} #minus #frac{C_{4}}{C_{2}}^{UrQMD}}{#sigma_{total}}");
 
-
-  cas->Print("Fig_R42_Method2_Significance_energy.pdf");
+  cas->Print("Fig_R42_CBWC_Significance_energy_compareUrQMD.pdf");
 }

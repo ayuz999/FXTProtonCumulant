@@ -1,3 +1,5 @@
+#include "../data_points/UrQMD_FXT_Method2_centrality_dependence_all.h"
+#include "../data_points/UrQMD_Collider_CBWC_centrality_dependence_all.h"
 #include "../data_points/R42_central_energy_dependence.h"
 #include "color_definition.h"
 
@@ -48,7 +50,6 @@ void plot_r42_method2_diff_energy(){
 
   for(int ipoint=0; ipoint<6;++ipoint){
     FXT_diff[ipoint] = FXT_Method2_R42[ipoint]-FXT_Method2_R42_UrQMD[ipoint];
-    cout<<FXT_diff[ipoint]<<endl;
     FXT_diff_stat[ipoint] = sqrt(pow(FXT_Method2_R42_stat[ipoint], 2.) + pow(FXT_Method2_R42_UrQMD_stat[ipoint], 2.));
     FXT_diff_sys[ipoint] = FXT_Method2_R42_sys[ipoint];
   }
@@ -63,8 +64,63 @@ void plot_r42_method2_diff_energy(){
   tg73->SetLineWidth(8);
   tg73->SetLineColorAlpha(1,0.3);
 
-  //make the plot
+  //UrQMD (0-5%) - UrQMD (50-60%)
+  double FXT_UrQMD_base_energy[6]={3.0, 3.2, 3.5, 3.9, 4.5, 5.2};
+  double FXT_UrQMD_base_ex[6]={0,0,0,0,0};
+  double FXT_UrQMD_base_diff[6]; //0-5% minus 50-60%
+  double FXT_UrQMD_base_diff_stat[6]; //0-5% minus 50-60%
+
+  FXT_UrQMD_base_diff[0]      =          UrQMD_Method2_3p0_R42[0]     -     UrQMD_Method2_3p0_R42[5];
+  FXT_UrQMD_base_diff_stat[0] = sqrt(pow(UrQMD_Method2_3p0_R42_stat[0],2.) + pow(UrQMD_Method2_3p0_R42_stat[5],2.));
+  FXT_UrQMD_base_diff[1]      =          UrQMD_Method2_3p2_R42[0]     -     UrQMD_Method2_3p2_R42[5];
+  FXT_UrQMD_base_diff_stat[1] = sqrt(pow(UrQMD_Method2_3p2_R42_stat[0],2.) + pow(UrQMD_Method2_3p2_R42_stat[5],2.));
+  FXT_UrQMD_base_diff[2]      =          UrQMD_Method2_3p5_R42[0]     -     UrQMD_Method2_3p5_R42[5];
+  FXT_UrQMD_base_diff_stat[2] = sqrt(pow(UrQMD_Method2_3p5_R42_stat[0],2.) + pow(UrQMD_Method2_3p5_R42_stat[5],2.));
+  FXT_UrQMD_base_diff[3]      =          UrQMD_Method2_3p9_R42[0]     -     UrQMD_Method2_3p9_R42[5];
+  FXT_UrQMD_base_diff_stat[3] = sqrt(pow(UrQMD_Method2_3p9_R42_stat[0],2.) + pow(UrQMD_Method2_3p9_R42_stat[5],2.));
+  FXT_UrQMD_base_diff[4]      =          UrQMD_Method2_4p5_R42[0]     -     UrQMD_Method2_4p5_R42[5];
+  FXT_UrQMD_base_diff_stat[4] = sqrt(pow(UrQMD_Method2_4p5_R42_stat[0],2.) + pow(UrQMD_Method2_4p5_R42_stat[5],2.));
+  FXT_UrQMD_base_diff[5]      =          UrQMD_Method2_5p2_R42[0]     -     UrQMD_Method2_5p2_R42[5];
+  FXT_UrQMD_base_diff_stat[5] = sqrt(pow(UrQMD_Method2_5p2_R42_stat[0],2.) + pow(UrQMD_Method2_5p2_R42_stat[5],2.));
+
+  TGraphErrors* tg_base1 = new TGraphErrors(6, FXT_UrQMD_base_energy, FXT_UrQMD_base_diff, FXT_UrQMD_base_ex, FXT_UrQMD_base_diff_stat);
+  tg_base1->SetMarkerStyle(24);
+  tg_base1->SetMarkerColor(4);
+  tg_base1->SetLineColor(4);
+
+  double Coll_UrQMD_base_energy[7]={7.7, 9.2, 11.5, 14.6, 17.3, 19.6, 27};
+  double Coll_UrQMD_base_ex[7]={0,0,0,0,0,0,0};
+  double Coll_UrQMD_base_diff[7];      //0-5% minus 50-60%
+  double Coll_UrQMD_base_diff_stat[7]; //0-5% minus 50-60%
+
+  Coll_UrQMD_base_diff[0]      =          UrQMD_7p7_Netp_R42[0]     -           UrQMD_7p7_Netp_R42      [5];
+  Coll_UrQMD_base_diff_stat[0] = sqrt(pow(UrQMD_7p7_Netp_R42_stat[0],2.)  + pow(UrQMD_7p7_Netp_R42_stat [5],2.));
+  Coll_UrQMD_base_diff[1]      =          UrQMD_9p2_Netp_R42[0]     -           UrQMD_9p2_Netp_R42      [5];
+  Coll_UrQMD_base_diff_stat[1] = sqrt(pow(UrQMD_9p2_Netp_R42_stat[0],2.)  + pow(UrQMD_9p2_Netp_R42_stat [5],2.));
+  Coll_UrQMD_base_diff[2]      =          UrQMD_11p5_Netp_R42[0]     -          UrQMD_11p5_Netp_R42     [5];
+  Coll_UrQMD_base_diff_stat[2] = sqrt(pow(UrQMD_11p5_Netp_R42_stat[0],2.) + pow(UrQMD_11p5_Netp_R42_stat[5],2.));
+  Coll_UrQMD_base_diff[3]      =          UrQMD_14p6_Netp_R42[0]     -          UrQMD_14p6_Netp_R42     [5];
+  Coll_UrQMD_base_diff_stat[3] = sqrt(pow(UrQMD_14p6_Netp_R42_stat[0],2.) + pow(UrQMD_14p6_Netp_R42_stat[5],2.));
+  Coll_UrQMD_base_diff[4]      =          UrQMD_17p3_Netp_R42[0]     -          UrQMD_17p3_Netp_R42     [5];
+  Coll_UrQMD_base_diff_stat[4] = sqrt(pow(UrQMD_17p3_Netp_R42_stat[0],2.) + pow(UrQMD_17p3_Netp_R42_stat[5],2.));
+  Coll_UrQMD_base_diff[5]      =          UrQMD_19p6_Netp_R42[0]     -          UrQMD_19p6_Netp_R42     [5];
+  Coll_UrQMD_base_diff_stat[5] = sqrt(pow(UrQMD_19p6_Netp_R42_stat[0],2.) + pow(UrQMD_19p6_Netp_R42_stat[5],2.));
+  Coll_UrQMD_base_diff[6]      =          UrQMD_27_Netp_R42[0]     -            UrQMD_27_Netp_R42       [5];
+  Coll_UrQMD_base_diff_stat[6] = sqrt(pow(UrQMD_27_Netp_R42_stat[0],2.)   + pow(UrQMD_27_Netp_R42_stat  [5],2.));
+
+  TGraphErrors* tg_base2 = new TGraphErrors(7, Coll_UrQMD_base_energy, Coll_UrQMD_base_diff, Coll_UrQMD_base_ex, Coll_UrQMD_base_diff_stat);
+  tg_base2->SetMarkerStyle(25);
+  tg_base2->SetMarkerColor(4);
+  tg_base2->SetLineColor(4);
+  //TGraphErrors* tg_base2_prof = new TGraphErrors(5, Coll_UrQMD_base_energy, Coll_UrQMD_base_diff, Coll_UrQMD_base_ex, Coll_UrQMD_base_ex);
+  //tg_base2_prof->SetMarkerStyle(24);
+  //tg_base2_prof->SetMarkerColor(1);
+  //tg_base2_prof->SetLineColor(1);
+
+
+
   //---------------------------------------------
+  //start to plot
   double xl1 = 2.5;
   double xl2 = 63;
   TLine l1(xl1, 1, xl2, 1);
@@ -141,7 +197,7 @@ void plot_r42_method2_diff_energy(){
   gPad->SetRightMargin(0.01);
   gPad->SetTopMargin(0.02);
   gPad->SetTicks(1,1);
-  TH1D* h1 = (TH1D*) gPad->DrawFrame(xl1, -0.55, xl2, 0.85);
+  TH1D* h1 = (TH1D*) gPad->DrawFrame(xl1, -1.55, xl2, 1.25);
   h1->GetXaxis()->SetNoExponent();
   h1->GetXaxis()->SetMoreLogLabels();
   h1->GetYaxis()->SetNdivisions(505);
@@ -169,6 +225,9 @@ void plot_r42_method2_diff_energy(){
   l44.Draw();
   l5.Draw();
 
+  tg_base1->Draw("P");
+  tg_base2->Draw("P");
+  tg_base2->Print();
 
   tg71->Draw("P");
   tg72->Draw("P");
@@ -193,17 +252,43 @@ void plot_r42_method2_diff_energy(){
   ll.SetTextSize(0.045);
   ll.SetTextSize(0.06);
 
+  TMarker *tm1  = new TMarker(16.4,0.76,20);
+  TMarker *tm2  = new TMarker(16.4,0.76,24);
+  TMarker *tm22 = new TMarker(16.4,0.76,24);
+  tm1->SetMarkerColorAlpha(1, 1.0);
+  tm1->SetMarkerSize(1.0);
+  tm1->Draw();
+  tm2->SetMarkerColorAlpha(1, 1.0);
+  tm2->SetMarkerSize(1.6);
+  tm2->Draw();
+  tm22->SetMarkerColorAlpha(1, 1.0);
+  tm22->SetMarkerSize(1.8);
+  tm22->Draw();
+
+  TMarker *tm3  = new TMarker(15.4,0.48,24);
+  tm3->SetMarkerColor(4);
+  tm3->Draw();
+  TMarker *tm31 = new TMarker(17.4,0.48,25);
+  tm31->SetMarkerColor(4);
+  tm31->Draw();
+
+
+
   ////draw text
   cas->cd();
   lax.SetTextFont(42);
   lax.DrawLatex(0.360,0.040, "Collision Energy #sqrt{s_{NN}}  (GeV)");
   lax.SetTextAngle(90);
   lax.SetTextSize(0.045);
-  lax.DrawLatex(0.036,0.350,"[C_{4}/C_{2}]^{Data}-[C_{4}/C_{2}]^{UrQMD}");
+  lax.DrawLatex(0.036,0.350,"C_{4}/C_{2} difference (Method 2)");
   lax.SetTextAngle(0);
   lax.SetTextSize(0.04);
-  //TBox *wb2 = new TBox(0.188,0.4, 0.460, 0.46);
-  //wb2->SetFillColor(0);
+
+  lax.DrawLatex(0.68,0.820,"[C_{4}/C_{2}]^{Data}_{0-5%} - [C_{4}/C_{2}]^{UrQMD}_{0-5%}");
+  //lax.DrawLatex(0.68,0.740,"[C_{4}/C_{2}]^{Data}_{0-5%} - [C_{4}/C_{2}]^{Data}_{50-60%}");
+  lax.DrawLatex(0.68,0.740,"[C_{4}/C_{2}]^{UrQMD}_{0-5%} - [C_{4}/C_{2}]^{UrQMD}_{40-50%}");
+
+
 
   cas->Print("Fig_R42_Method2_diff_energy.pdf");
 }

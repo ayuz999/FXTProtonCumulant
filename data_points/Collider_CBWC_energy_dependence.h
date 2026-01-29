@@ -19,6 +19,9 @@ static const TString cObservableDisplayNames[cNObservables] = {
     "#bar{p}_{} #kappa_{4}/#kappa_{1}"
 };
 
+double Coll_CBWC_muB [9]={     420,      372,       316,       262,       230,       206,       156,       112,      85};
+
+
 static const Double_t cObservables[cNObservables][cNCentralities][cNEnergies] = {
     // Observable 1
     {
