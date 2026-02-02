@@ -64,58 +64,58 @@ void plot_r42_method2_diff_energy(){
   tg73->SetLineWidth(8);
   tg73->SetLineColorAlpha(1,0.3);
 
-  //UrQMD (0-5%) - UrQMD (50-60%)
-  double FXT_UrQMD_base_energy[6]={3.0, 3.2, 3.5, 3.9, 4.5, 5.2};
-  double FXT_UrQMD_base_ex[6]={0,0,0,0,0};
-  double FXT_UrQMD_base_diff[6]; //0-5% minus 50-60%
-  double FXT_UrQMD_base_diff_stat[6]; //0-5% minus 50-60%
+  //Data(0-5%) - Data(40-50)
 
-  FXT_UrQMD_base_diff[0]      =          UrQMD_Method2_3p0_R42[0]     -     UrQMD_Method2_3p0_R42[5];
-  FXT_UrQMD_base_diff_stat[0] = sqrt(pow(UrQMD_Method2_3p0_R42_stat[0],2.) + pow(UrQMD_Method2_3p0_R42_stat[5],2.));
-  FXT_UrQMD_base_diff[1]      =          UrQMD_Method2_3p2_R42[0]     -     UrQMD_Method2_3p2_R42[5];
-  FXT_UrQMD_base_diff_stat[1] = sqrt(pow(UrQMD_Method2_3p2_R42_stat[0],2.) + pow(UrQMD_Method2_3p2_R42_stat[5],2.));
-  FXT_UrQMD_base_diff[2]      =          UrQMD_Method2_3p5_R42[0]     -     UrQMD_Method2_3p5_R42[5];
-  FXT_UrQMD_base_diff_stat[2] = sqrt(pow(UrQMD_Method2_3p5_R42_stat[0],2.) + pow(UrQMD_Method2_3p5_R42_stat[5],2.));
-  FXT_UrQMD_base_diff[3]      =          UrQMD_Method2_3p9_R42[0]     -     UrQMD_Method2_3p9_R42[5];
-  FXT_UrQMD_base_diff_stat[3] = sqrt(pow(UrQMD_Method2_3p9_R42_stat[0],2.) + pow(UrQMD_Method2_3p9_R42_stat[5],2.));
-  FXT_UrQMD_base_diff[4]      =          UrQMD_Method2_4p5_R42[0]     -     UrQMD_Method2_4p5_R42[5];
-  FXT_UrQMD_base_diff_stat[4] = sqrt(pow(UrQMD_Method2_4p5_R42_stat[0],2.) + pow(UrQMD_Method2_4p5_R42_stat[5],2.));
-  FXT_UrQMD_base_diff[5]      =          UrQMD_Method2_5p2_R42[0]     -     UrQMD_Method2_5p2_R42[5];
-  FXT_UrQMD_base_diff_stat[5] = sqrt(pow(UrQMD_Method2_5p2_R42_stat[0],2.) + pow(UrQMD_Method2_5p2_R42_stat[5],2.));
 
-  TGraphErrors* tg_base1 = new TGraphErrors(6, FXT_UrQMD_base_energy, FXT_UrQMD_base_diff, FXT_UrQMD_base_ex, FXT_UrQMD_base_diff_stat);
-  tg_base1->SetMarkerStyle(24);
-  tg_base1->SetMarkerColor(4);
-  tg_base1->SetLineColor(4);
 
-  double Coll_UrQMD_base_energy[7]={7.7, 9.2, 11.5, 14.6, 17.3, 19.6, 27};
-  double Coll_UrQMD_base_ex[7]={0,0,0,0,0,0,0};
-  double Coll_UrQMD_base_diff[7];      //0-5% minus 50-60%
-  double Coll_UrQMD_base_diff_stat[7]; //0-5% minus 50-60%
+  ////UrQMD (0-5%) - UrQMD (40-50%)
+  //double FXT_UrQMD_base_energy[6]={3.0, 3.2, 3.5, 3.9, 4.5, 5.2};
+  //double FXT_UrQMD_base_ex[6]={0,0,0,0,0};
+  //double FXT_UrQMD_base_diff[6]; //0-5% minus 50-60%
+  //double FXT_UrQMD_base_diff_stat[6]; //0-5% minus 50-60%
 
-  Coll_UrQMD_base_diff[0]      =          UrQMD_7p7_Netp_R42[0]     -           UrQMD_7p7_Netp_R42      [5];
-  Coll_UrQMD_base_diff_stat[0] = sqrt(pow(UrQMD_7p7_Netp_R42_stat[0],2.)  + pow(UrQMD_7p7_Netp_R42_stat [5],2.));
-  Coll_UrQMD_base_diff[1]      =          UrQMD_9p2_Netp_R42[0]     -           UrQMD_9p2_Netp_R42      [5];
-  Coll_UrQMD_base_diff_stat[1] = sqrt(pow(UrQMD_9p2_Netp_R42_stat[0],2.)  + pow(UrQMD_9p2_Netp_R42_stat [5],2.));
-  Coll_UrQMD_base_diff[2]      =          UrQMD_11p5_Netp_R42[0]     -          UrQMD_11p5_Netp_R42     [5];
-  Coll_UrQMD_base_diff_stat[2] = sqrt(pow(UrQMD_11p5_Netp_R42_stat[0],2.) + pow(UrQMD_11p5_Netp_R42_stat[5],2.));
-  Coll_UrQMD_base_diff[3]      =          UrQMD_14p6_Netp_R42[0]     -          UrQMD_14p6_Netp_R42     [5];
-  Coll_UrQMD_base_diff_stat[3] = sqrt(pow(UrQMD_14p6_Netp_R42_stat[0],2.) + pow(UrQMD_14p6_Netp_R42_stat[5],2.));
-  Coll_UrQMD_base_diff[4]      =          UrQMD_17p3_Netp_R42[0]     -          UrQMD_17p3_Netp_R42     [5];
-  Coll_UrQMD_base_diff_stat[4] = sqrt(pow(UrQMD_17p3_Netp_R42_stat[0],2.) + pow(UrQMD_17p3_Netp_R42_stat[5],2.));
-  Coll_UrQMD_base_diff[5]      =          UrQMD_19p6_Netp_R42[0]     -          UrQMD_19p6_Netp_R42     [5];
-  Coll_UrQMD_base_diff_stat[5] = sqrt(pow(UrQMD_19p6_Netp_R42_stat[0],2.) + pow(UrQMD_19p6_Netp_R42_stat[5],2.));
-  Coll_UrQMD_base_diff[6]      =          UrQMD_27_Netp_R42[0]     -            UrQMD_27_Netp_R42       [5];
-  Coll_UrQMD_base_diff_stat[6] = sqrt(pow(UrQMD_27_Netp_R42_stat[0],2.)   + pow(UrQMD_27_Netp_R42_stat  [5],2.));
+  //FXT_UrQMD_base_diff[0]      =          UrQMD_Method2_3p0_R42[0]     -     UrQMD_Method2_3p0_R42[5];
+  //FXT_UrQMD_base_diff_stat[0] = sqrt(pow(UrQMD_Method2_3p0_R42_stat[0],2.) + pow(UrQMD_Method2_3p0_R42_stat[5],2.));
+  //FXT_UrQMD_base_diff[1]      =          UrQMD_Method2_3p2_R42[0]     -     UrQMD_Method2_3p2_R42[5];
+  //FXT_UrQMD_base_diff_stat[1] = sqrt(pow(UrQMD_Method2_3p2_R42_stat[0],2.) + pow(UrQMD_Method2_3p2_R42_stat[5],2.));
+  //FXT_UrQMD_base_diff[2]      =          UrQMD_Method2_3p5_R42[0]     -     UrQMD_Method2_3p5_R42[5];
+  //FXT_UrQMD_base_diff_stat[2] = sqrt(pow(UrQMD_Method2_3p5_R42_stat[0],2.) + pow(UrQMD_Method2_3p5_R42_stat[5],2.));
+  //FXT_UrQMD_base_diff[3]      =          UrQMD_Method2_3p9_R42[0]     -     UrQMD_Method2_3p9_R42[5];
+  //FXT_UrQMD_base_diff_stat[3] = sqrt(pow(UrQMD_Method2_3p9_R42_stat[0],2.) + pow(UrQMD_Method2_3p9_R42_stat[5],2.));
+  //FXT_UrQMD_base_diff[4]      =          UrQMD_Method2_4p5_R42[0]     -     UrQMD_Method2_4p5_R42[5];
+  //FXT_UrQMD_base_diff_stat[4] = sqrt(pow(UrQMD_Method2_4p5_R42_stat[0],2.) + pow(UrQMD_Method2_4p5_R42_stat[5],2.));
+  //FXT_UrQMD_base_diff[5]      =          UrQMD_Method2_5p2_R42[0]     -     UrQMD_Method2_5p2_R42[5];
+  //FXT_UrQMD_base_diff_stat[5] = sqrt(pow(UrQMD_Method2_5p2_R42_stat[0],2.) + pow(UrQMD_Method2_5p2_R42_stat[5],2.));
 
-  TGraphErrors* tg_base2 = new TGraphErrors(7, Coll_UrQMD_base_energy, Coll_UrQMD_base_diff, Coll_UrQMD_base_ex, Coll_UrQMD_base_diff_stat);
-  tg_base2->SetMarkerStyle(25);
-  tg_base2->SetMarkerColor(4);
-  tg_base2->SetLineColor(4);
-  //TGraphErrors* tg_base2_prof = new TGraphErrors(5, Coll_UrQMD_base_energy, Coll_UrQMD_base_diff, Coll_UrQMD_base_ex, Coll_UrQMD_base_ex);
-  //tg_base2_prof->SetMarkerStyle(24);
-  //tg_base2_prof->SetMarkerColor(1);
-  //tg_base2_prof->SetLineColor(1);
+  //TGraphErrors* tg_base1 = new TGraphErrors(6, FXT_UrQMD_base_energy, FXT_UrQMD_base_diff, FXT_UrQMD_base_ex, FXT_UrQMD_base_diff_stat);
+  //tg_base1->SetMarkerStyle(24);
+  //tg_base1->SetMarkerColor(4);
+  //tg_base1->SetLineColor(4);
+
+  //double Coll_UrQMD_base_energy[7]={7.7, 9.2, 11.5, 14.6, 17.3, 19.6, 27};
+  //double Coll_UrQMD_base_ex[7]={0,0,0,0,0,0,0};
+  //double Coll_UrQMD_base_diff[7];      //0-5% minus 50-60%
+  //double Coll_UrQMD_base_diff_stat[7]; //0-5% minus 50-60%
+
+  //Coll_UrQMD_base_diff[0]      =          UrQMD_7p7_Netp_R42[0]     -           UrQMD_7p7_Netp_R42      [5];
+  //Coll_UrQMD_base_diff_stat[0] = sqrt(pow(UrQMD_7p7_Netp_R42_stat[0],2.)  + pow(UrQMD_7p7_Netp_R42_stat [5],2.));
+  //Coll_UrQMD_base_diff[1]      =          UrQMD_9p2_Netp_R42[0]     -           UrQMD_9p2_Netp_R42      [5];
+  //Coll_UrQMD_base_diff_stat[1] = sqrt(pow(UrQMD_9p2_Netp_R42_stat[0],2.)  + pow(UrQMD_9p2_Netp_R42_stat [5],2.));
+  //Coll_UrQMD_base_diff[2]      =          UrQMD_11p5_Netp_R42[0]     -          UrQMD_11p5_Netp_R42     [5];
+  //Coll_UrQMD_base_diff_stat[2] = sqrt(pow(UrQMD_11p5_Netp_R42_stat[0],2.) + pow(UrQMD_11p5_Netp_R42_stat[5],2.));
+  //Coll_UrQMD_base_diff[3]      =          UrQMD_14p6_Netp_R42[0]     -          UrQMD_14p6_Netp_R42     [5];
+  //Coll_UrQMD_base_diff_stat[3] = sqrt(pow(UrQMD_14p6_Netp_R42_stat[0],2.) + pow(UrQMD_14p6_Netp_R42_stat[5],2.));
+  //Coll_UrQMD_base_diff[4]      =          UrQMD_17p3_Netp_R42[0]     -          UrQMD_17p3_Netp_R42     [5];
+  //Coll_UrQMD_base_diff_stat[4] = sqrt(pow(UrQMD_17p3_Netp_R42_stat[0],2.) + pow(UrQMD_17p3_Netp_R42_stat[5],2.));
+  //Coll_UrQMD_base_diff[5]      =          UrQMD_19p6_Netp_R42[0]     -          UrQMD_19p6_Netp_R42     [5];
+  //Coll_UrQMD_base_diff_stat[5] = sqrt(pow(UrQMD_19p6_Netp_R42_stat[0],2.) + pow(UrQMD_19p6_Netp_R42_stat[5],2.));
+  //Coll_UrQMD_base_diff[6]      =          UrQMD_27_Netp_R42[0]     -            UrQMD_27_Netp_R42       [5];
+  //Coll_UrQMD_base_diff_stat[6] = sqrt(pow(UrQMD_27_Netp_R42_stat[0],2.)   + pow(UrQMD_27_Netp_R42_stat  [5],2.));
+
+  //TGraphErrors* tg_base2 = new TGraphErrors(7, Coll_UrQMD_base_energy, Coll_UrQMD_base_diff, Coll_UrQMD_base_ex, Coll_UrQMD_base_diff_stat);
+  //tg_base2->SetMarkerStyle(25);
+  //tg_base2->SetMarkerColor(4);
+  //tg_base2->SetLineColor(4);
 
 
 
@@ -286,7 +286,7 @@ void plot_r42_method2_diff_energy(){
 
   lax.DrawLatex(0.68,0.820,"[C_{4}/C_{2}]^{Data}_{0-5%} - [C_{4}/C_{2}]^{UrQMD}_{0-5%}");
   //lax.DrawLatex(0.68,0.740,"[C_{4}/C_{2}]^{Data}_{0-5%} - [C_{4}/C_{2}]^{Data}_{50-60%}");
-  lax.DrawLatex(0.68,0.740,"[C_{4}/C_{2}]^{UrQMD}_{0-5%} - [C_{4}/C_{2}]^{UrQMD}_{40-50%}");
+  lax.DrawLatex(0.68,0.740,"[C_{4}/C_{2}]^{Data}_{0-5%} - [C_{4}/C_{2}]^{Data}_{40-50%}");
 
 
 

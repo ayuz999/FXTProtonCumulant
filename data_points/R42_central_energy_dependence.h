@@ -36,13 +36,12 @@ double FXT_CBWC_R42_UrQMD_sys [6]={ 0.0437,  0.0119,  0.0204, 0.0188, 0.0411, 0.
 double FXT_CBWC_R42_UrQMD_tot [6]={ 0.1019,  0.0673,  0.0633, 0.0676, 0.0757, 0.1011};//sqrt(stat^2+sys^2)
 
 //0-5%, method 2, urqmd at fxt energies
-double FXT_Method2_R42_UrQMD_x   [6]={   3.0,    3.2,    3.5,    3.9,    4.5,   5.2};
-double FXT_Method2_R42_UrQMD_muB [6]={   750,    699,    670,    633,    590,   540};
-double FXT_Method2_R42_UrQMD_ex  [6]={     0,      0,      0,      0,      0,     0};
-//double FXT_Method2_R42_UrQMD     [6]={0.0616, 0.1324, 0.3176, 0.2897, 0.3440,0.5300}; //old results
-//double FXT_Method2_R42_UrQMD_stat[6]={0.0856, 0.0662, 0.0607, 0.0645, 0.0840,0.0960}; //old results
-double FXT_Method2_R42_UrQMD     [6]={0.0827, 0.0528, 0.3176, 0.2988, 0.3523,0.5233}; //new results except 3.5
-double FXT_Method2_R42_UrQMD_stat[6]={0.0838, 0.0888, 0.0607, 0.0612, 0.0853,0.0954}; //new results except 3.5
+double FXT_Method2_R42_UrQMD_x   [6]={   3.0,    3.2,    3.5,    3.9,    4.5,     5.2};
+double FXT_Method2_R42_UrQMD_muB [6]={   750,    699,    670,    633,    590,     540};
+double FXT_Method2_R42_UrQMD_ex  [6]={     0,      0,      0,      0,      0,       0};
+
+double FXT_Method2_R42_UrQMD     [6]={0.0864, 0.1374, 0.3113, 0.2873, 0.3579,  0.5408};
+double FXT_Method2_R42_UrQMD_stat[6]={0.0853, 0.0653, 0.0602, 0.0629, 0.0874,  0.0954};
  
 //0-5%, cbwc method, urqmd at collider energies
 double Coll_CBWC_R42_UrQMD_x   [9]={   7.7,     9.2,    11.5,    14.6,    17.3,    19.6,      27,     39,   54.4};
