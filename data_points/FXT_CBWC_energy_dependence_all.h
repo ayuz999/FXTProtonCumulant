@@ -3,9 +3,9 @@
 //-0.5<y<0, 0.4<pT<2.0 GeV/c
 
 
-double FXT_CBWC_Energy[5]={3.0, 3.2, 3.5, 3.9, 4.5};//, 5.2};
-double FXT_CBWC_muB[5]   ={750, 699, 670, 633, 590};//, 540};
-double FXT_CBWC_XError[5]={  0,   0,   0,   0,   0};//,   0};
+double FXT_CBWC_Energy[6]={3.0, 3.2, 3.5, 3.9, 4.5, 5.2};
+double FXT_CBWC_muB[6]   ={750, 699, 670, 633, 590, 540};
+double FXT_CBWC_XError[6]={  0,   0,   0,   0,   0,   0};
 
 //Centrality: 0-5%
 double FXT_CBWC_C1_Cent05       [5]={ 30.56973,  30.90165,  30.23687,  27.55681,  24.11633};
