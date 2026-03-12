@@ -41,23 +41,26 @@ void plot_AllRatios_CBWC_significance_energy(){
   for(int ierg=0;ierg<6;++ierg){
     FXT_diff1     [0][ierg] =          FXT_CBWC_R21_Cent05[ierg]            -     UrQMD_FXT_CBWC_GapON_HY5_R21_Cent05[ierg];
     FXT_diff1_stat[0][ierg] = sqrt(pow(FXT_CBWC_R21_Cent05_stat[ierg], 2.)  + pow(UrQMD_FXT_CBWC_GapON_HY5_R21_Cent05_stat[ierg] ,2.) );
-    FXT_diff1_sys [0][ierg] =          FXT_CBWC_R21_Cent05_sys[ierg];
+    FXT_diff1_sys [0][ierg] = sqrt(pow(FXT_CBWC_R21_Cent05_sys [ierg], 2.)  + pow(UrQMD_FXT_CBWC_GapON_HY5_R21_Cent05_sys [ierg] ,2.) );
     FXT_diff1     [1][ierg] =          FXT_CBWC_R31_Cent05[ierg]            -     UrQMD_FXT_CBWC_GapON_HY5_R31_Cent05[ierg];
     FXT_diff1_stat[1][ierg] = sqrt(pow(FXT_CBWC_R31_Cent05_stat[ierg], 2.)  + pow(UrQMD_FXT_CBWC_GapON_HY5_R31_Cent05_stat[ierg] ,2.) );
-    FXT_diff1_sys [1][ierg] =          FXT_CBWC_R31_Cent05_sys[ierg];
+    FXT_diff1_sys [1][ierg] = sqrt(pow(FXT_CBWC_R31_Cent05_sys [ierg], 2.)  + pow(UrQMD_FXT_CBWC_GapON_HY5_R31_Cent05_sys [ierg] ,2.) );
     FXT_diff1     [2][ierg] =          FXT_CBWC_R42_Cent05[ierg]            -     UrQMD_FXT_CBWC_GapON_HY5_R42_Cent05[ierg];
     FXT_diff1_stat[2][ierg] = sqrt(pow(FXT_CBWC_R42_Cent05_stat[ierg], 2.)  + pow(UrQMD_FXT_CBWC_GapON_HY5_R42_Cent05_stat[ierg] ,2.) );
-    FXT_diff1_sys [2][ierg] =          FXT_CBWC_R42_Cent05_sys[ierg];
+    FXT_diff1_sys [2][ierg] = sqrt(pow(FXT_CBWC_R42_Cent05_sys [ierg], 2.)  + pow(UrQMD_FXT_CBWC_GapON_HY5_R42_Cent05_sys [ierg] ,2.) );
     FXT_diff1     [3][ierg] =          FXT_CBWC_FC21_Cent05[ierg]           -     UrQMD_FXT_CBWC_GapON_HY5_FC21_Cent05[ierg];
     FXT_diff1_stat[3][ierg] = sqrt(pow(FXT_CBWC_FC21_Cent05_stat[ierg], 2.) + pow(UrQMD_FXT_CBWC_GapON_HY5_FC21_Cent05_stat[ierg] ,2.) );
-    FXT_diff1_sys [3][ierg] =          FXT_CBWC_FC21_Cent05_sys[ierg];
+    FXT_diff1_sys [3][ierg] = sqrt(pow(FXT_CBWC_FC21_Cent05_sys [ierg], 2.) + pow(UrQMD_FXT_CBWC_GapON_HY5_FC21_Cent05_sys [ierg] ,2.) );
     FXT_diff1     [4][ierg] =          FXT_CBWC_FC31_Cent05[ierg]           -     UrQMD_FXT_CBWC_GapON_HY5_FC31_Cent05[ierg];
     FXT_diff1_stat[4][ierg] = sqrt(pow(FXT_CBWC_FC31_Cent05_stat[ierg], 2.) + pow(UrQMD_FXT_CBWC_GapON_HY5_FC31_Cent05_stat[ierg] ,2.) );
-    FXT_diff1_sys [4][ierg] =          FXT_CBWC_FC31_Cent05_sys[ierg];
+    FXT_diff1_sys [4][ierg] = sqrt(pow(FXT_CBWC_FC31_Cent05_sys [ierg], 2.) + pow(UrQMD_FXT_CBWC_GapON_HY5_FC31_Cent05_sys [ierg] ,2.) );
     FXT_diff1     [5][ierg] =          FXT_CBWC_FC41_Cent05[ierg]           -     UrQMD_FXT_CBWC_GapON_HY5_FC41_Cent05[ierg];
     FXT_diff1_stat[5][ierg] = sqrt(pow(FXT_CBWC_FC41_Cent05_stat[ierg], 2.) + pow(UrQMD_FXT_CBWC_GapON_HY5_FC41_Cent05_stat[ierg] ,2.) );
-    FXT_diff1_sys [5][ierg] =          FXT_CBWC_FC41_Cent05_sys[ierg];
+    FXT_diff1_sys [5][ierg] = sqrt(pow(FXT_CBWC_FC41_Cent05_sys [ierg], 2.) + pow(UrQMD_FXT_CBWC_GapON_HY5_FC41_Cent05_sys [ierg] ,2.) );
   }
+
+
+
   //data(0-5%)   - data(50-60%)
   double FXT_diff2     [6][6];
   double FXT_diff2_stat[6][6];
@@ -82,6 +85,7 @@ void plot_AllRatios_CBWC_significance_energy(){
     FXT_diff2_stat[5][ierg] = sqrt(pow(FXT_CBWC_FC41_Cent05_stat[ierg], 2.) + pow(FXT_CBWC_FC41_Cent5060_stat[ierg] ,2.) );
     FXT_diff2_sys [5][ierg] = sqrt(pow(FXT_CBWC_FC41_Cent05_sys[ierg],  2.) + pow(FXT_CBWC_FC41_Cent5060_sys[ierg], 2.) ); 
   }
+
 
   //data(50-60%) - UrQMD(50-60%)
   double FXT_diff3     [6][6];
@@ -118,6 +122,8 @@ void plot_AllRatios_CBWC_significance_energy(){
       FXT_signif3  [icum][ierg] = FXT_diff3[icum][ierg] / FXT_diff3_tot[icum][ierg];
     }
   }
+  
+
 
   TGraphErrors* tg1[6];
   TGraphErrors* tg2[6];
@@ -317,14 +323,14 @@ void plot_AllRatios_CBWC_significance_energy(){
   gPad->SetBottomMargin(0);
   gPad->SetLeftMargin(0.12);
   gPad->SetRightMargin(0.03);
-  TH1D* h1 = (TH1D*)gPad->DrawFrame(x1, -22.22, x2, 21.17);
+  TH1D* h1 = (TH1D*)gPad->DrawFrame(x1, -22.22, x2, 23.17);
   h1->GetXaxis()->SetNoExponent();
   h1->GetXaxis()->SetMoreLogLabels();
   h1->GetYaxis()->SetNdivisions(505);
   h1->GetYaxis()->SetLabelOffset(0.01);
   gPad->SetTicks(1,1);
   gPad->SetLogx();
-  TBox yellbox1(x1,-22.22, 5.5, 21.17);
+  TBox yellbox1(x1,-22.22, 5.5, 23.17);
   yellbox1.SetFillColorAlpha(5, 0.2);
   yellbox1.SetLineColorAlpha(5, 0.2);
   yellbox1.Draw();
@@ -372,7 +378,7 @@ void plot_AllRatios_CBWC_significance_energy(){
   h3->GetYaxis()->SetNdivisions(505);
   gPad->SetTicks(1,1);
   gPad->SetLogx();
-  TBox yellbox3(x1,-31.6, 5, 8.2);
+  TBox yellbox3(x1,-31.6, 5.5, 8.2);
   yellbox3.SetFillColorAlpha(5, 0.2);
   yellbox3.SetLineColorAlpha(5, 0.2);
   yellbox3.Draw();
@@ -393,7 +399,7 @@ void plot_AllRatios_CBWC_significance_energy(){
   gPad->SetLeftMargin(0.12);
   gPad->SetRightMargin(0.03);
   gPad->SetTicks(1,1);
-  TH1D* h4 = (TH1D*)gPad->DrawFrame(x1, -31.22, x2, 12.22);
+  TH1D* h4 = (TH1D*)gPad->DrawFrame(x1, -31.22, x2, 24.22);
   h4->GetYaxis()->SetLabelOffset(0.01);
   h4->GetXaxis()->SetMoreLogLabels();
   h4->GetYaxis()->SetNdivisions(505);
@@ -402,7 +408,7 @@ void plot_AllRatios_CBWC_significance_energy(){
   h4->GetXaxis()->ChangeLabel(4, -1, -1, -1, -1, -1, " ");
   h4->GetXaxis()->ChangeLabel(6, -1, -1, -1, -1, -1, " ");
   gPad->SetLogx();
-  TBox yellbox4(x1,-31.22, 5, 12.22);
+  TBox yellbox4(x1,-31.22, 5.5, 24.22);
   yellbox4.SetFillColorAlpha(5, 0.2);
   yellbox4.SetLineColorAlpha(5, 0.2);
   yellbox4.Draw();
@@ -430,7 +436,7 @@ void plot_AllRatios_CBWC_significance_energy(){
   h5->GetXaxis()->ChangeLabel(2, -1, -1, -1, -1, -1, " ");
   h5->GetXaxis()->ChangeLabel(4, -1, -1, -1, -1, -1, " ");
   h5->GetXaxis()->ChangeLabel(6, -1, -1, -1, -1, -1, " ");
-  TBox yellbox5(x1,-4.22, 5, 16.12);
+  TBox yellbox5(x1,-4.22, 5.5, 16.12);
   yellbox5.SetFillColorAlpha(5, 0.2);
   yellbox5.SetLineColorAlpha(5, 0.2);
   yellbox5.Draw();
@@ -451,7 +457,7 @@ void plot_AllRatios_CBWC_significance_energy(){
   gPad->SetLeftMargin(0.12);
   gPad->SetRightMargin(0.03);
   gPad->SetTicks(1,1);
-  TH1D* h6 = (TH1D*)gPad->DrawFrame(x1, -4.2, x2, 1.74);
+  TH1D* h6 = (TH1D*)gPad->DrawFrame(x1, -4.2, x2, 2.74);
   h6->GetXaxis()->SetMoreLogLabels();
   h6->GetYaxis()->SetLabelOffset(0.01);
   h6->GetYaxis()->SetNdivisions(505);
@@ -461,7 +467,7 @@ void plot_AllRatios_CBWC_significance_energy(){
   h6->GetXaxis()->ChangeLabel(6, -1, -1, -1, -1, -1, " ");
   //h6->Draw();
   gPad->SetLogx();
-  TBox yellbox6(x1,-4.2, 5, 1.74);
+  TBox yellbox6(x1,-4.2, 5.5, 2.74);
   yellbox6.SetFillColorAlpha(5, 0.2);
   yellbox6.SetLineColorAlpha(5, 0.2);
   yellbox6.Draw();
@@ -523,10 +529,10 @@ void plot_AllRatios_CBWC_significance_energy(){
   //leg->AddEntry(tg2[0], "data_{0-5%} #minus data_{50-60%}", "p");
   leg->AddEntry(tg3[0], "data_{50-60%} #minus UrQMD_{50-60%}", "p");
   leg->SetTextSize(0.025);
-  leg->SetX1(0.51);
-  leg->SetX2(0.57);
-  leg->SetY1(0.24);
-  leg->SetY2(0.34);
+  leg->SetX1(0.42);
+  leg->SetX2(0.47);
+  leg->SetY1(0.62);
+  leg->SetY2(0.72);
   leg->Draw();
 
 

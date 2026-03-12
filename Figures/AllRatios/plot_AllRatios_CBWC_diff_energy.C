@@ -313,14 +313,14 @@ void plot_AllRatios_CBWC_diff_energy(){
   gPad->SetBottomMargin(0);
   gPad->SetLeftMargin(0.12);
   gPad->SetRightMargin(0.03);
-  TH1D* h1 = (TH1D*)gPad->DrawFrame(x1, -0.33, x2, 0.17);
+  TH1D* h1 = (TH1D*)gPad->DrawFrame(x1, -0.13, x2, 0.17);
   h1->GetXaxis()->SetNoExponent();
   h1->GetXaxis()->SetMoreLogLabels();
   h1->GetYaxis()->SetNdivisions(505);
   h1->GetYaxis()->SetLabelOffset(0.01);
   gPad->SetTicks(1,1);
   gPad->SetLogx();
-  TBox yellbox1(x1,-0.33, 5, 0.17);
+  TBox yellbox1(x1,-0.33, 5.5, 0.17);
   yellbox1.SetFillColorAlpha(5, 0.2);
   yellbox1.SetLineColorAlpha(5, 0.2);
   yellbox1.Draw();
@@ -345,13 +345,13 @@ void plot_AllRatios_CBWC_diff_energy(){
   gPad->SetLeftMargin(0.12);
   gPad->SetRightMargin(0.03);
   gPad->SetTicks(1,1);
-  TH1D* h2 = (TH1D*)gPad->DrawFrame(x1, -2.16, x2, 0.68);
+  TH1D* h2 = (TH1D*)gPad->DrawFrame(x1, -0.56, x2, 0.63);
   h2->GetXaxis()->SetMoreLogLabels();
   h2->GetXaxis()->SetNoExponent();
   h2->GetYaxis()->SetNdivisions(505);
   h2->GetYaxis()->SetLabelOffset(0.01);
   gPad->SetLogx();
-  TBox yellbox2(x1,-2.16, 5, 0.68);
+  TBox yellbox2(x1,-0.56, 5.5, 0.63);
   yellbox2.SetFillColorAlpha(5, 0.2);
   yellbox2.SetLineColorAlpha(5, 0.2);
   yellbox2.Draw();
@@ -376,14 +376,14 @@ void plot_AllRatios_CBWC_diff_energy(){
   gPad->SetBottomMargin(0);
   gPad->SetLeftMargin(0.12);
   gPad->SetRightMargin(0.03);
-  TH1D* h3 = (TH1D*)gPad->DrawFrame(x1, -7.6, x2, 2.2);
+  TH1D* h3 = (TH1D*)gPad->DrawFrame(x1, -1.6, x2, 1.8);
   h3->GetXaxis()->SetMoreLogLabels();
   h3->GetXaxis()->SetNoExponent();
   h3->GetYaxis()->SetLabelOffset(0.01);
   h3->GetYaxis()->SetNdivisions(505);
   gPad->SetTicks(1,1);
   gPad->SetLogx();
-  TBox yellbox3(x1,-7.6, 5, 2.2);
+  TBox yellbox3(x1,-1.6, 5.5, 1.8);
   yellbox3.SetFillColorAlpha(5, 0.2);
   yellbox3.SetLineColorAlpha(5, 0.2);
   yellbox3.Draw();
@@ -410,7 +410,7 @@ void plot_AllRatios_CBWC_diff_energy(){
   gPad->SetLeftMargin(0.12);
   gPad->SetRightMargin(0.03);
   gPad->SetTicks(1,1);
-  TH1D* h4 = (TH1D*)gPad->DrawFrame(x1, -0.27, x2, 0.18);
+  TH1D* h4 = (TH1D*)gPad->DrawFrame(x1, -0.14, x2, 0.14);
   h4->GetYaxis()->SetLabelOffset(0.01);
   h4->GetXaxis()->SetMoreLogLabels();
   h4->GetYaxis()->SetNdivisions(505);
@@ -419,7 +419,7 @@ void plot_AllRatios_CBWC_diff_energy(){
   h4->GetXaxis()->ChangeLabel(4, -1, -1, -1, -1, -1, " ");
   h4->GetXaxis()->ChangeLabel(6, -1, -1, -1, -1, -1, " ");
   gPad->SetLogx();
-  TBox yellbox4(x1,-0.27, 5, 0.18);
+  TBox yellbox4(x1,-0.14, 5.5, 0.14);
   yellbox4.SetFillColorAlpha(5, 0.2);
   yellbox4.SetLineColorAlpha(5, 0.2);
   yellbox4.Draw();
@@ -445,7 +445,7 @@ void plot_AllRatios_CBWC_diff_energy(){
   gPad->SetBottomMargin(0.15);
   gPad->SetLeftMargin(0.12);
   gPad->SetRightMargin(0.03);
-  TH1D* h5 = (TH1D*)gPad->DrawFrame(x1, -1.22, x2, 0.18);
+  TH1D* h5 = (TH1D*)gPad->DrawFrame(x1, -0.22, x2, 0.18);
   h5->GetXaxis()->SetMoreLogLabels();
   h5->GetXaxis()->SetNoExponent();
   h5->GetYaxis()->SetLabelOffset(0.01);
@@ -453,7 +453,7 @@ void plot_AllRatios_CBWC_diff_energy(){
   h5->GetXaxis()->ChangeLabel(2, -1, -1, -1, -1, -1, " ");
   h5->GetXaxis()->ChangeLabel(4, -1, -1, -1, -1, -1, " ");
   h5->GetXaxis()->ChangeLabel(6, -1, -1, -1, -1, -1, " ");
-  TBox yellbox5(x1,-1.22, 5, 0.18);
+  TBox yellbox5(x1,-0.22, 5.5, 0.18);
   yellbox5.SetFillColorAlpha(5, 0.2);
   yellbox5.SetLineColorAlpha(5, 0.2);
   yellbox5.Draw();
@@ -483,7 +483,7 @@ void plot_AllRatios_CBWC_diff_energy(){
   gPad->SetLeftMargin(0.12);
   gPad->SetRightMargin(0.03);
   gPad->SetTicks(1,1);
-  TH1D* h6 = (TH1D*)gPad->DrawFrame(x1, -2.4, x2, 1.14);
+  TH1D* h6 = (TH1D*)gPad->DrawFrame(x1, -1.6, x2, 1.14);
   h6->GetXaxis()->SetMoreLogLabels();
   h6->GetYaxis()->SetLabelOffset(0.01);
   h6->GetYaxis()->SetNdivisions(505);
@@ -493,7 +493,7 @@ void plot_AllRatios_CBWC_diff_energy(){
   h6->GetXaxis()->ChangeLabel(6, -1, -1, -1, -1, -1, " ");
   //h6->Draw();
   gPad->SetLogx();
-  TBox yellbox6(x1,-2.4, 5, 1.14);
+  TBox yellbox6(x1,-1.6, 5.5, 1.14);
   yellbox6.SetFillColorAlpha(5, 0.2);
   yellbox6.SetLineColorAlpha(5, 0.2);
   yellbox6.Draw();
@@ -525,8 +525,8 @@ void plot_AllRatios_CBWC_diff_energy(){
   lax.SetTextAngle(90);
   //lax.DrawLatex(0.05,0.475,"Ratios");
   lax.SetTextSize(0.050);
-  lax.DrawLatex(0.05, 0.295, "Proton");
-  lax.DrawLatex(0.05, 0.645, "Net-proton");
+  lax.DrawLatex(0.04, 0.295, "Proton");
+  lax.DrawLatex(0.04, 0.645, "Net-proton");
 
   lax.SetTextSize(0.035);
   lax.SetTextAngle(0);
@@ -565,7 +565,7 @@ void plot_AllRatios_CBWC_diff_energy(){
   leg->SetX1(0.47);
   leg->SetX2(0.58);
   leg->SetY1(0.20);
-  leg->SetY2(0.37);
+  leg->SetY2(0.34);
   leg->Draw();
 
 

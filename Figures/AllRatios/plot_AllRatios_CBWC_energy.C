@@ -175,7 +175,7 @@ void plot_AllRatios_CBWC_energy(){
   h1->GetYaxis()->SetLabelOffset(0.01);
   gPad->SetTicks(1,1);
   gPad->SetLogx();
-  TBox yellbox1(x1,0.82, 5, 1.27);
+  TBox yellbox1(x1,0.82, 5.5, 1.27);
   yellbox1.SetFillColorAlpha(5, 0.2);
   yellbox1.SetLineColorAlpha(5, 0.2);
   yellbox1.Draw();
@@ -199,7 +199,7 @@ void plot_AllRatios_CBWC_energy(){
   h2->GetYaxis()->SetNdivisions(505);
   h2->GetYaxis()->SetLabelOffset(0.01);
   gPad->SetLogx();
-  TBox yellbox2(x1,0.56, 5, 1.38);
+  TBox yellbox2(x1,0.56, 5.5, 1.38);
   yellbox2.SetFillColorAlpha(5, 0.2);
   yellbox2.SetLineColorAlpha(5, 0.2);
   yellbox2.Draw();
@@ -225,7 +225,7 @@ void plot_AllRatios_CBWC_energy(){
   h3->GetYaxis()->SetNdivisions(505);
   gPad->SetTicks(1,1);
   gPad->SetLogx();
-  TBox yellbox3(x1,-1.8, 5, 2.2);
+  TBox yellbox3(x1,-1.8, 5.5, 2.2);
   yellbox3.SetFillColorAlpha(5, 0.2);
   yellbox3.SetLineColorAlpha(5, 0.2);
   yellbox3.Draw();
@@ -255,7 +255,7 @@ void plot_AllRatios_CBWC_energy(){
   h4->GetXaxis()->ChangeLabel(4, -1, -1, -1, -1, -1, " ");
   h4->GetXaxis()->ChangeLabel(6, -1, -1, -1, -1, -1, " ");
   gPad->SetLogx();
-  TBox yellbox4(x1,-0.28, 5, 0.38);
+  TBox yellbox4(x1,-0.28, 5.5, 0.38);
   yellbox4.SetFillColorAlpha(5, 0.2);
   yellbox4.SetLineColorAlpha(5, 0.2);
   yellbox4.Draw();
@@ -283,7 +283,7 @@ void plot_AllRatios_CBWC_energy(){
   h5->GetXaxis()->ChangeLabel(2, -1, -1, -1, -1, -1, " ");
   h5->GetXaxis()->ChangeLabel(4, -1, -1, -1, -1, -1, " ");
   h5->GetXaxis()->ChangeLabel(6, -1, -1, -1, -1, -1, " ");
-  TBox yellbox5(x1,-0.62, 5, 0.32);
+  TBox yellbox5(x1,-0.62, 5.5, 0.32);
   yellbox5.SetFillColorAlpha(5, 0.2);
   yellbox5.SetLineColorAlpha(5, 0.2);
   yellbox5.Draw();
@@ -317,7 +317,7 @@ void plot_AllRatios_CBWC_energy(){
   h6->GetXaxis()->ChangeLabel(6, -1, -1, -1, -1, -1, " ");
   //h6->Draw();
   gPad->SetLogx();
-  TBox yellbox6(x1,-1.4, 5, 0.84);
+  TBox yellbox6(x1,-1.4, 5.5, 0.84);
   yellbox6.SetFillColorAlpha(5, 0.2);
   yellbox6.SetLineColorAlpha(5, 0.2);
   yellbox6.Draw();
@@ -357,14 +357,14 @@ void plot_AllRatios_CBWC_energy(){
   lax.SetTextFont(72);
   lax.SetTextColor(1);
   lax.SetTextColor(4);
-  lax.DrawLatex(0.155,0.880,"CBWC");
+  lax.DrawLatex(0.175,0.880,"CBWC");
   lax.SetTextColor(1);
   lax.SetTextColor(1);
-  lax.SetTextSize(0.035);
+  lax.SetTextSize(0.031);
   lax.SetTextFont(42);
-  lax.DrawLatex(0.165,0.800,"5\% Au+Au Collisions");
-  lax.SetTextSize(0.035);
-  lax.DrawLatex(0.165,0.750,"0.4 < p_{T} < 2.0 GeV/c");
+  lax.DrawLatex(0.185,0.800,"5\% Au+Au Collisions");
+  lax.SetTextSize(0.031);
+  lax.DrawLatex(0.185,0.750,"0.4 < p_{T} < 2.0 GeV/c");
 
 
 

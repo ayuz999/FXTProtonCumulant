@@ -15,10 +15,12 @@ double rap_pt(double *x_val, double *par){
 void plot_acceptance(){
   
   TFile *inf1 = new TFile("FXT_Acceptance.root");
+  TH2D* h0 = (TH2D*) inf1->Get("pty_3p0");
   TH2D* h1 = (TH2D*) inf1->Get("pty_3p2");
   TH2D* h2 = (TH2D*) inf1->Get("pty_3p5");
   TH2D* h3 = (TH2D*) inf1->Get("pty_3p9");
   TH2D* h4 = (TH2D*) inf1->Get("pty_4p5");
+  TH2D* h5 = (TH2D*) inf1->Get("pty_5p2");
 
   h1->SetTitle(";;");
   h2->SetTitle(";;");

@@ -324,7 +324,7 @@ void plot_AllRatios_Method2_significance_energy(){
   h1->GetYaxis()->SetLabelOffset(0.01);
   gPad->SetTicks(1,1);
   gPad->SetLogx();
-  TBox yellbox1(x1,-16.22, 5, 21.17);
+  TBox yellbox1(x1,-16.22, 5.5, 21.17);
   yellbox1.SetFillColorAlpha(5, 0.2);
   yellbox1.SetLineColorAlpha(5, 0.2);
   yellbox1.Draw();
@@ -349,7 +349,7 @@ void plot_AllRatios_Method2_significance_energy(){
   h2->GetYaxis()->SetNdivisions(505);
   h2->GetYaxis()->SetLabelOffset(0.01);
   gPad->SetLogx();
-  TBox yellbox2(x1,-27.66, 5, 12.28);
+  TBox yellbox2(x1,-27.66, 5.5, 12.28);
   yellbox2.SetFillColorAlpha(5, 0.2);
   yellbox2.SetLineColorAlpha(5, 0.2);
   yellbox2.Draw();
@@ -375,7 +375,7 @@ void plot_AllRatios_Method2_significance_energy(){
   h3->GetYaxis()->SetNdivisions(505);
   gPad->SetTicks(1,1);
   gPad->SetLogx();
-  TBox yellbox3(x1,-27.6, 5, 12.2);
+  TBox yellbox3(x1,-27.6, 5.5, 12.2);
   yellbox3.SetFillColorAlpha(5, 0.2);
   yellbox3.SetLineColorAlpha(5, 0.2);
   yellbox3.Draw();
@@ -405,7 +405,7 @@ void plot_AllRatios_Method2_significance_energy(){
   h4->GetXaxis()->ChangeLabel(4, -1, -1, -1, -1, -1, " ");
   h4->GetXaxis()->ChangeLabel(6, -1, -1, -1, -1, -1, " ");
   gPad->SetLogx();
-  TBox yellbox4(x1,-33.22, 5, 15.22);
+  TBox yellbox4(x1,-33.22, 5.5, 15.22);
   yellbox4.SetFillColorAlpha(5, 0.2);
   yellbox4.SetLineColorAlpha(5, 0.2);
   yellbox4.Draw();
@@ -425,7 +425,7 @@ void plot_AllRatios_Method2_significance_energy(){
   gPad->SetBottomMargin(0.15);
   gPad->SetLeftMargin(0.12);
   gPad->SetRightMargin(0.03);
-  TH1D* h5 = (TH1D*)gPad->DrawFrame(x1, -6.22, x2, 16.12);
+  TH1D* h5 = (TH1D*)gPad->DrawFrame(x1, -6.22, x2, 17.12);
   h5->GetXaxis()->SetMoreLogLabels();
   h5->GetXaxis()->SetNoExponent();
   h5->GetYaxis()->SetLabelOffset(0.01);
@@ -433,7 +433,7 @@ void plot_AllRatios_Method2_significance_energy(){
   h5->GetXaxis()->ChangeLabel(2, -1, -1, -1, -1, -1, " ");
   h5->GetXaxis()->ChangeLabel(4, -1, -1, -1, -1, -1, " ");
   h5->GetXaxis()->ChangeLabel(6, -1, -1, -1, -1, -1, " ");
-  TBox yellbox5(x1,-6.22, 5, 16.12);
+  TBox yellbox5(x1,-6.22, 5.5, 17.12);
   yellbox5.SetFillColorAlpha(5, 0.2);
   yellbox5.SetLineColorAlpha(5, 0.2);
   yellbox5.Draw();
@@ -457,7 +457,7 @@ void plot_AllRatios_Method2_significance_energy(){
   gPad->SetLeftMargin(0.12);
   gPad->SetRightMargin(0.03);
   gPad->SetTicks(1,1);
-  TH1D* h6 = (TH1D*)gPad->DrawFrame(x1, -4.4, x2, 2.74);
+  TH1D* h6 = (TH1D*)gPad->DrawFrame(x1, -3.8, x2, 2.34);
   h6->GetXaxis()->SetMoreLogLabels();
   h6->GetYaxis()->SetLabelOffset(0.01);
   h6->GetYaxis()->SetNdivisions(505);
@@ -465,9 +465,10 @@ void plot_AllRatios_Method2_significance_energy(){
   h6->GetXaxis()->ChangeLabel(2, -1, -1, -1, -1, -1, " ");
   h6->GetXaxis()->ChangeLabel(4, -1, -1, -1, -1, -1, " ");
   h6->GetXaxis()->ChangeLabel(6, -1, -1, -1, -1, -1, " ");
+  h6->GetXaxis()->ChangeLabel(7, -1, -1, -1, -1, -1, " ");
   //h6->Draw();
   gPad->SetLogx();
-  TBox yellbox6(x1,-4.4, 5, 2.74);
+  TBox yellbox6(x1,-3.8, 5.5, 2.34);
   yellbox6.SetFillColorAlpha(5, 0.2);
   yellbox6.SetLineColorAlpha(5, 0.2);
   yellbox6.Draw();
@@ -512,7 +513,7 @@ void plot_AllRatios_Method2_significance_energy(){
   lax.SetTextFont(72);
   lax.SetTextColor(1);
   lax.SetTextColor(4);
-  lax.DrawLatex(0.170,0.890,"Method 2");
+  lax.DrawLatex(0.170,0.890,"CIGAR");
   lax.DrawLatex(0.170,0.860,"Significance");
   lax.SetTextColor(1);
   lax.SetTextColor(1);
@@ -530,8 +531,8 @@ void plot_AllRatios_Method2_significance_energy(){
   //leg->AddEntry(tg2[0], "data_{0-5%} #minus data_{50-60%}", "p");
   leg->AddEntry(tg3[0], "data_{50-60%} #minus UrQMD_{50-60%}", "p");
   leg->SetTextSize(0.025);
-  leg->SetX1(0.41);
-  leg->SetX2(0.47);
+  leg->SetX1(0.42);
+  leg->SetX2(0.50);
   leg->SetY1(0.44);
   leg->SetY2(0.54);
   leg->Draw();

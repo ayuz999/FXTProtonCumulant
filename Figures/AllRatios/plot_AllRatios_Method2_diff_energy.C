@@ -313,14 +313,14 @@ void plot_AllRatios_Method2_diff_energy(){
   gPad->SetBottomMargin(0);
   gPad->SetLeftMargin(0.12);
   gPad->SetRightMargin(0.03);
-  TH1D* h1 = (TH1D*)gPad->DrawFrame(x1, -0.12, x2, 0.17);
+  TH1D* h1 = (TH1D*)gPad->DrawFrame(x1, -0.13, x2, 0.14);
   h1->GetXaxis()->SetNoExponent();
   h1->GetXaxis()->SetMoreLogLabels();
   h1->GetYaxis()->SetNdivisions(505);
   h1->GetYaxis()->SetLabelOffset(0.01);
   gPad->SetTicks(1,1);
   gPad->SetLogx();
-  TBox yellbox1(x1,-0.12, 5, 0.17);
+  TBox yellbox1(x1,-0.13, 5.5, 0.14);
   yellbox1.SetFillColorAlpha(5, 0.2);
   yellbox1.SetLineColorAlpha(5, 0.2);
   yellbox1.Draw();
@@ -345,13 +345,13 @@ void plot_AllRatios_Method2_diff_energy(){
   gPad->SetLeftMargin(0.12);
   gPad->SetRightMargin(0.03);
   gPad->SetTicks(1,1);
-  TH1D* h2 = (TH1D*)gPad->DrawFrame(x1, -0.26, x2, 0.28);
+  TH1D* h2 = (TH1D*)gPad->DrawFrame(x1, -0.29, x2, 0.28);
   h2->GetXaxis()->SetMoreLogLabels();
   h2->GetXaxis()->SetNoExponent();
   h2->GetYaxis()->SetNdivisions(505);
   h2->GetYaxis()->SetLabelOffset(0.01);
   gPad->SetLogx();
-  TBox yellbox2(x1,-0.26, 5, 0.28);
+  TBox yellbox2(x1,-0.29, 5.5, 0.28);
   yellbox2.SetFillColorAlpha(5, 0.2);
   yellbox2.SetLineColorAlpha(5, 0.2);
   yellbox2.Draw();
@@ -376,14 +376,14 @@ void plot_AllRatios_Method2_diff_energy(){
   gPad->SetBottomMargin(0);
   gPad->SetLeftMargin(0.12);
   gPad->SetRightMargin(0.03);
-  TH1D* h3 = (TH1D*)gPad->DrawFrame(x1, -0.6, x2, 0.9);
+  TH1D* h3 = (TH1D*)gPad->DrawFrame(x1, -0.6, x2, 0.8);
   h3->GetXaxis()->SetMoreLogLabels();
   h3->GetXaxis()->SetNoExponent();
   h3->GetYaxis()->SetLabelOffset(0.01);
   h3->GetYaxis()->SetNdivisions(505);
   gPad->SetTicks(1,1);
   gPad->SetLogx();
-  TBox yellbox3(x1,-0.6, 5, 0.9);
+  TBox yellbox3(x1,-0.6, 5.5, 0.8);
   yellbox3.SetFillColorAlpha(5, 0.2);
   yellbox3.SetLineColorAlpha(5, 0.2);
   yellbox3.Draw();
@@ -410,7 +410,7 @@ void plot_AllRatios_Method2_diff_energy(){
   gPad->SetLeftMargin(0.12);
   gPad->SetRightMargin(0.03);
   gPad->SetTicks(1,1);
-  TH1D* h4 = (TH1D*)gPad->DrawFrame(x1, -0.12, x2, 0.17);
+  TH1D* h4 = (TH1D*)gPad->DrawFrame(x1, -0.14, x2, 0.14);
   h4->GetYaxis()->SetLabelOffset(0.01);
   h4->GetXaxis()->SetMoreLogLabels();
   h4->GetYaxis()->SetNdivisions(505);
@@ -419,7 +419,7 @@ void plot_AllRatios_Method2_diff_energy(){
   h4->GetXaxis()->ChangeLabel(4, -1, -1, -1, -1, -1, " ");
   h4->GetXaxis()->ChangeLabel(6, -1, -1, -1, -1, -1, " ");
   gPad->SetLogx();
-  TBox yellbox4(x1,-0.12, 5, 0.17);
+  TBox yellbox4(x1,-0.14, 5.5, 0.14);
   yellbox4.SetFillColorAlpha(5, 0.2);
   yellbox4.SetLineColorAlpha(5, 0.2);
   yellbox4.Draw();
@@ -445,7 +445,7 @@ void plot_AllRatios_Method2_diff_energy(){
   gPad->SetBottomMargin(0.15);
   gPad->SetLeftMargin(0.12);
   gPad->SetRightMargin(0.03);
-  TH1D* h5 = (TH1D*)gPad->DrawFrame(x1, -0.22, x2, 0.12);
+  TH1D* h5 = (TH1D*)gPad->DrawFrame(x1, -0.17, x2, 0.15);
   h5->GetXaxis()->SetMoreLogLabels();
   h5->GetXaxis()->SetNoExponent();
   h5->GetYaxis()->SetLabelOffset(0.01);
@@ -453,7 +453,7 @@ void plot_AllRatios_Method2_diff_energy(){
   h5->GetXaxis()->ChangeLabel(2, -1, -1, -1, -1, -1, " ");
   h5->GetXaxis()->ChangeLabel(4, -1, -1, -1, -1, -1, " ");
   h5->GetXaxis()->ChangeLabel(6, -1, -1, -1, -1, -1, " ");
-  TBox yellbox5(x1,-0.22, 5, 0.12);
+  TBox yellbox5(x1,-0.17, 5.5, 0.15);
   yellbox5.SetFillColorAlpha(5, 0.2);
   yellbox5.SetLineColorAlpha(5, 0.2);
   yellbox5.Draw();
@@ -474,16 +474,13 @@ void plot_AllRatios_Method2_diff_energy(){
   tg6_sys[4]->Draw("zp");
 
 
-
-
-
   pad[5]->cd();
   gPad->SetTopMargin(0);
   gPad->SetBottomMargin(0.15);
   gPad->SetLeftMargin(0.12);
   gPad->SetRightMargin(0.03);
   gPad->SetTicks(1,1);
-  TH1D* h6 = (TH1D*)gPad->DrawFrame(x1, -0.4, x2, 0.74);
+  TH1D* h6 = (TH1D*)gPad->DrawFrame(x1, -0.29, x2, 0.58);
   h6->GetXaxis()->SetMoreLogLabels();
   h6->GetYaxis()->SetLabelOffset(0.01);
   h6->GetYaxis()->SetNdivisions(505);
@@ -491,9 +488,10 @@ void plot_AllRatios_Method2_diff_energy(){
   h6->GetXaxis()->ChangeLabel(2, -1, -1, -1, -1, -1, " ");
   h6->GetXaxis()->ChangeLabel(4, -1, -1, -1, -1, -1, " ");
   h6->GetXaxis()->ChangeLabel(6, -1, -1, -1, -1, -1, " ");
+  h6->GetXaxis()->ChangeLabel(7, -1, -1, -1, -1, -1, " ");
   //h6->Draw();
   gPad->SetLogx();
-  TBox yellbox6(x1,-0.4, 5, 0.74);
+  TBox yellbox6(x1,-0.29, 5.5, 0.58);
   yellbox6.SetFillColorAlpha(5, 0.2);
   yellbox6.SetLineColorAlpha(5, 0.2);
   yellbox6.Draw();
@@ -510,8 +508,6 @@ void plot_AllRatios_Method2_diff_energy(){
   //tg5_sys[5]->Draw("zp");
   tg6    [5]->Draw("p");
   tg6_sys[5]->Draw("zp");
-
-
 
 
 
@@ -543,8 +539,8 @@ void plot_AllRatios_Method2_diff_energy(){
   lax.SetTextFont(72);
   lax.SetTextColor(1);
   lax.SetTextColor(4);
-  lax.DrawLatex(0.170,0.890,"Method 2");
-  lax.DrawLatex(0.170,0.860,"Difference");
+  lax.DrawLatex(0.173,0.890,"CIGAR");
+  lax.DrawLatex(0.173,0.860,"Difference");
   lax.SetTextColor(1);
   lax.SetTextColor(1);
   lax.SetTextSize(0.035);
@@ -560,11 +556,11 @@ void plot_AllRatios_Method2_diff_energy(){
   leg->AddEntry(tg1[0], "data_{0-5%} #minus UrQMD_{0-5%}", "p");
   //leg->AddEntry(tg2[0], "data_{0-5%} #minus data_{50-60%}", "p");
   leg->AddEntry(tg3[0], "data_{50-60%} #minus UrQMD_{50-60%}", "p");
-  leg->SetTextSize(0.031);
-  leg->SetX1(0.47);
+  leg->SetTextSize(0.025);
+  leg->SetX1(0.50);
   leg->SetX2(0.58);
   leg->SetY1(0.20);
-  leg->SetY2(0.37);
+  leg->SetY2(0.30);
   leg->Draw();
 
 

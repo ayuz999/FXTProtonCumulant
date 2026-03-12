@@ -1,7 +1,6 @@
 //experimental data at 3.0 GeV from Run 18
 //CBWC method
 //-0.5<y<0, 0.4<pT<2.0 GeV/c
-double FXT_CBWC_3p0GeV_Npart[7]={326,282,219,157,107,70,47};
 double FXT_CBWC_3p0GeV_C1       [7]={ 30.56973, 24.31456, 17.28908, 10.76146,  6.37818,  3.61267,  2.14469};
 double FXT_CBWC_3p0GeV_C1_stat  [7]={  0.00194,  0.00178,  0.00118,  0.00088,  0.00070,  0.00055,  0.00059};
 double FXT_CBWC_3p0GeV_C1_sys   [7]={  1.63447,  1.40204,  1.09966,  0.83114,  0.67023,  0.57777,  0.48788};
@@ -50,7 +49,6 @@ double FXT_CBWC_3p0GeV_FC41_sys [7]={  0.67132,  0.38727,  0.07346,  0.15336,  0
 //experimental data at 3.2 GeV
 //CBWC method
 //-0.5<y<0, 0.4<pT<2.0 GeV/c
-double FXT_CBWC_3p2GeV_Npart[7]={326,285,224,160,112,76,50};
 double FXT_CBWC_3p2GeV_C1       [7]={ 30.90165, 25.15225, 18.54140, 12.35723,  7.89799,  4.84046,  2.89359};
 double FXT_CBWC_3p2GeV_C1_stat  [7]={  0.00179,  0.00169,  0.00104,  0.00088,  0.00068,  0.00061,  0.00051};
 double FXT_CBWC_3p2GeV_C1_sys   [7]={  2.28609,  1.89167,  1.42046,  1.00821,  0.73862,  0.57082,  0.45387};
@@ -99,7 +97,6 @@ double FXT_CBWC_3p2GeV_FC41_sys [7]={  0.16259,  0.19933,  0.05170,  0.05243,  0
 //experimental data at 3.5 GeV
 //CBWC method
 //-0.5<y<0, 0.4<pT<2.0 GeV/c
-double FXT_CBWC_3p5GeV_Npart[7]={332,285,222,156,106,69,45};
 double FXT_CBWC_3p5GeV_C1       [7]={ 30.23687, 24.70307, 18.27512, 12.08441,  7.66756,  4.54891,  2.66712};
 double FXT_CBWC_3p5GeV_C1_stat  [7]={  0.00379,  0.00361,  0.00217,  0.00181,  0.00143,  0.00116,  0.00106};
 double FXT_CBWC_3p5GeV_C1_sys   [7]={  2.33668,  1.92642,  1.43871,  0.98931,  0.68957,  0.49542,  0.39861};
@@ -148,7 +145,6 @@ double FXT_CBWC_3p5GeV_FC41_sys [7]={  0.13504,  0.09494,  0.09899,  0.04344,  0
 //experimental data at 3.9 GeV
 //CBWC method
 //-0.5<y<0, 0.4<pT<2.0 GeV/c
-double FXT_CBWC_3p9GeV_Npart[7]={333,285,222,155,107,71,46};
 double FXT_CBWC_3p9GeV_C1       [7]={ 27.55681, 22.21486, 16.32743, 10.54643,  6.55870,  3.89345,  2.21754};
 double FXT_CBWC_3p9GeV_C1_stat  [7]={  0.00303,  0.00289,  0.00174,  0.00139,  0.00114,  0.00090,  0.00076};
 double FXT_CBWC_3p9GeV_C1_sys   [7]={  4.91376,  3.85397,  2.73350,  1.70647,  1.04540,  0.63633,  0.37489};
@@ -197,7 +193,6 @@ double FXT_CBWC_3p9GeV_FC41_sys [7]={  0.14345,  0.12384,  0.09178,  0.01628,  0
 //experimental data at 4.5 GeV
 //CBWC method
 //-0.5<y<0, 0.4<pT<2.0 GeV/c
-double FXT_CBWC_4p5GeV_Npart[7]={331, 287, 225, 160, 112, 74, 46};
 double FXT_CBWC_4p5GeV_C1       [7]={  24.11633,   19.58854,   14.40705,    9.50310,    5.98681,    3.51270,    1.94507, };
 double FXT_CBWC_4p5GeV_C1_stat  [7]={   0.00724,    0.00635,    0.00339,    0.00255,    0.00187,    0.00142,    0.00113, };
 double FXT_CBWC_4p5GeV_C1_sys   [7]={   1.81418,    1.46372,    1.06747,    0.71666,    0.47687,    0.31832,    0.19452, };
